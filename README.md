@@ -4,6 +4,10 @@ Take-home assignment for researching 100 requested apps as potential Composio to
 
 The deliverable is a single self-contained case study page: [`index.html`](index.html).
 
+Live page: https://itzrahuldas.github.io/composio-research-agent/
+
+Source repo: https://github.com/itzrahuldas/composio-research-agent
+
 ## What This Repo Contains
 
 - `data/apps_research.csv` - final 100-app research matrix with category, auth, access gate, API surface, MCP signal, buildability verdict, confidence and evidence URLs.

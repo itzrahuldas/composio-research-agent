@@ -580,6 +580,7 @@ def build_html(apps: list[dict[str, str]], audit: list[dict[str, str]], stats: d
         <p><code>python3 src/research_agent.py --build</code></p>
         <p>Run URL verification loop:</p>
         <p><code>python3 src/research_agent.py --check-links --limit 40</code></p>
+        <p>Source repo: <a href="https://github.com/itzrahuldas/composio-research-agent" target="_blank" rel="noopener">github.com/itzrahuldas/composio-research-agent</a></p>
         <p>Composio-oriented output: <code>data/toolkit_queue.json</code> ranks P0 easy wins, P1 gated builds, and P3 outreach targets for toolkit planning.</p>
       </div>
     </section>
