@@ -67,6 +67,7 @@ The workflow is a loop:
 - The hardest blockers cluster in ads/social review, finance/compliance, enterprise commerce and apps with no public API docs.
 - OAuth2 dominates multi-user SaaS, while API keys/bearer tokens dominate data, scraping, email and internal-platform APIs.
 - Official MCP/agent-ready surfaces now exist for several high-value targets, including Shopify, GitHub, Vercel, Cloudflare, Supabase, Linear, Otter and Consensus.
+- The HTML now includes generated charts for verdict distribution, auth method frequency, blocker families and category-by-verdict buildability.
 
 ## Verification Result
 

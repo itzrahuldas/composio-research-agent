@@ -66,11 +66,38 @@ def verdict_bucket(row: dict[str, str]) -> str:
 
 
 def access_bucket(row: dict[str, str]) -> str:
-    text = f"{row['access']} {row['verdict']} {row['blocker']}".lower()
-    if any(term in text for term in ["no verified", "no public", "not buildable", "outreach needed", "gated:"]):
+    access = row["access"].lower()
+    verdict = row["verdict"].lower()
+    if any(term in verdict for term in ["not buildable", "outreach"]) or any(
+        term in access
+        for term in [
+            "no verified",
+            "no public",
+            "not public",
+            "gated:",
+            "contract",
+            "not generally free",
+        ]
+    ):
         return "Gated / unknown"
-    if any(
-        term in text
+
+    has_self_serve = any(
+        term in access
+        for term in [
+            "self-serve",
+            "free",
+            "trial",
+            "developer account",
+            "signup",
+            "sign up",
+            "open-source",
+            "fully self-serve",
+            "public api keys",
+            "public docs",
+        ]
+    )
+    has_gate = any(
+        term in access
         for term in [
             "review",
             "approval",
@@ -81,9 +108,15 @@ def access_bucket(row: dict[str, str]) -> str:
             "compliance",
             "business verification",
             "account manager",
+            "eligible",
         ]
-    ):
-        return "Review, plan or admin gate"
+    )
+    if has_self_serve and has_gate:
+        return "Self-serve + review/admin gate"
+    if has_self_serve:
+        return "Self-serve"
+    if has_gate:
+        return "Review, paid or admin gate"
     return "Self-serve"
 
 
@@ -104,6 +137,55 @@ def auth_families(apps: Iterable[dict[str, str]]) -> Counter[str]:
         if "unknown" in auth or "not verified" in auth:
             counts["Unknown"] += 1
     return counts
+
+
+def row_auth_families(row: dict[str, str]) -> list[str]:
+    auth = row["auth_methods"].lower()
+    families = []
+    if "oauth2" in auth or "oauth" in auth:
+        families.append("OAuth2")
+    if "api key" in auth or "access token" in auth or "bearer" in auth or "pat" in auth or "secret" in auth:
+        families.append("API key / bearer token")
+    if "basic" in auth:
+        families.append("Basic auth")
+    if "jwt" in auth:
+        families.append("JWT")
+    if "hmac" in auth or "sigv4" in auth:
+        families.append("Signed request")
+    if "unknown" in auth or "not verified" in auth:
+        families.append("Unknown")
+    return families or ["Other"]
+
+
+def blocker_families(apps: Iterable[dict[str, str]]) -> Counter[str]:
+    counts: Counter[str] = Counter()
+    for row in apps:
+        text = f"{row['access']} {row['blocker']} {row['verdict']}".lower()
+        if any(term in text for term in ["review", "approval", "business verification", "developer token"]):
+            counts["App review / approval"] += 1
+        if any(term in text for term in ["paid", "plan", "cost", "credit", "subscription"]):
+            counts["Paid plan / cost"] += 1
+        if any(term in text for term in ["customer", "enterprise", "partner", "contact sales", "account manager"]):
+            counts["Customer / partner gate"] += 1
+        if any(term in text for term in ["no public", "not verified", "could not", "unclear", "not available"]):
+            counts["No public docs / unclear API"] += 1
+        if any(term in text for term in ["compliance", "verification", "policy", "restricted", "kyc"]):
+            counts["Compliance / policy"] += 1
+        if any(term in text for term in ["schema", "scope", "permission", "tenant", "workspace", "admin"]):
+            counts["Scopes / admin model"] += 1
+        if any(term in text for term in ["write", "money", "payment", "trading", "irreversible", "safety"]):
+            counts["High-risk write actions"] += 1
+    return counts
+
+
+def auth_access_stats(apps: Iterable[dict[str, str]]) -> dict[str, Counter[str]]:
+    stats: dict[str, Counter[str]] = defaultdict(Counter)
+    for row in apps:
+        for family in row_auth_families(row):
+            stats[family][access_bucket(row)] += 1
+            stats[family]["Total"] += 1
+            stats[family][verdict_bucket(row)] += 1
+    return stats
 
 
 def is_official_mcp(row: dict[str, str]) -> bool:
@@ -128,8 +210,10 @@ def compute_stats(apps: list[dict[str, str]], audit: list[dict[str, str]]) -> di
     access_counts = Counter(access_bucket(row) for row in apps)
     confidence_counts = Counter(row["confidence"] for row in apps)
     category_stats: dict[str, Counter[str]] = defaultdict(Counter)
+    category_access_stats: dict[str, Counter[str]] = defaultdict(Counter)
     for row in apps:
         category_stats[row["category"]][verdict_bucket(row)] += 1
+        category_access_stats[row["category"]][access_bucket(row)] += 1
         category_stats[row["category"]]["Total"] += 1
 
     first_total = sum(int(row["first_pass_supported"]) for row in audit)
@@ -143,6 +227,9 @@ def compute_stats(apps: list[dict[str, str]], audit: list[dict[str, str]]) -> di
         "confidence_counts": confidence_counts,
         "auth_counts": auth_families(apps),
         "category_stats": category_stats,
+        "category_access_stats": category_access_stats,
+        "blocker_counts": blocker_families(apps),
+        "auth_access_stats": auth_access_stats(apps),
         "official_mcp_count": sum(1 for row in apps if is_official_mcp(row)),
         "high_confidence_count": sum(1 for row in apps if row["confidence"] == "High"),
         "audit_sample": len(audit),
@@ -215,12 +302,176 @@ def evidence_links(row: dict[str, str]) -> str:
     return " ".join(links)
 
 
+VERDICT_ORDER = ["Ready today", "Ready after gate", "Outreach needed", "No public build path", "Needs investigation"]
+VERDICT_COLORS = {
+    "Ready today": "#26734d",
+    "Ready after gate": "#a96800",
+    "Outreach needed": "#b43434",
+    "No public build path": "#842f74",
+    "Needs investigation": "#6456c8",
+}
+
+
+def build_verdict_donut(stats: dict[str, object]) -> str:
+    verdict_counts: Counter[str] = stats["verdict_counts"]  # type: ignore[assignment]
+    total = sum(verdict_counts.values()) or 1
+    start = 0.0
+    segments = []
+    legend = []
+    for name in VERDICT_ORDER:
+        count = verdict_counts.get(name, 0)
+        if not count:
+            continue
+        degrees = count / total * 360
+        end = start + degrees
+        segments.append(f"{VERDICT_COLORS[name]} {start:.1f}deg {end:.1f}deg")
+        legend.append(
+            f'<span><i style="background:{VERDICT_COLORS[name]}"></i>{esc(name)} <b>{count}</b></span>'
+        )
+        start = end
+    return f"""
+      <div class="chart-card">
+        <h3>Buildability Verdicts</h3>
+        <div class="donut" style="background: conic-gradient({', '.join(segments)});"><b>{total}</b><span>apps</span></div>
+        <div class="legend">{''.join(legend)}</div>
+      </div>
+    """
+
+
+def build_auth_bars(stats: dict[str, object]) -> str:
+    auth_counts: Counter[str] = stats["auth_counts"]  # type: ignore[assignment]
+    max_count = max(auth_counts.values()) if auth_counts else 1
+    bars = []
+    for name, count in auth_counts.most_common():
+        width = count / max_count * 100
+        bars.append(
+            f"""
+            <div class="bar-row">
+              <span>{esc(name)}</span>
+              <div class="bar-track"><i style="width:{width:.1f}%"></i></div>
+              <b>{count}</b>
+            </div>
+            """
+        )
+    return f"""
+      <div class="chart-card">
+        <h3>Auth Method Frequency</h3>
+        <div class="bars">{''.join(bars)}</div>
+      </div>
+    """
+
+
+def build_category_stacks(stats: dict[str, object]) -> str:
+    category_stats: dict[str, Counter[str]] = stats["category_stats"]  # type: ignore[assignment]
+    rows = []
+    for category, counts in category_stats.items():
+        total = counts["Total"] or 1
+        segments = []
+        for name in VERDICT_ORDER:
+            count = counts.get(name, 0)
+            if not count:
+                continue
+            width = count / total * 100
+            segments.append(
+                f'<i title="{esc(name)}: {count}" style="width:{width:.1f}%; background:{VERDICT_COLORS[name]}"></i>'
+            )
+        rows.append(
+            f"""
+            <div class="stack-row">
+              <span>{esc(category)}</span>
+              <div class="stack">{''.join(segments)}</div>
+              <b>{counts.get('Ready today', 0)}/{total} ready</b>
+            </div>
+            """
+        )
+    return f"""
+      <div class="chart-card wide">
+        <h3>Category x Verdict</h3>
+        <div class="stacks">{''.join(rows)}</div>
+      </div>
+    """
+
+
+def build_blocker_bars(stats: dict[str, object]) -> str:
+    blocker_counts: Counter[str] = stats["blocker_counts"]  # type: ignore[assignment]
+    top = blocker_counts.most_common(7)
+    max_count = max([count for _, count in top] or [1])
+    bars = []
+    for name, count in top:
+        width = count / max_count * 100
+        bars.append(
+            f"""
+            <div class="bar-row">
+              <span>{esc(name)}</span>
+              <div class="bar-track amber"><i style="width:{width:.1f}%"></i></div>
+              <b>{count}</b>
+            </div>
+            """
+        )
+    return f"""
+      <div class="chart-card">
+        <h3>Main Blocker Families</h3>
+        <div class="bars">{''.join(bars)}</div>
+      </div>
+    """
+
+
+def build_deep_patterns(apps: list[dict[str, str]], stats: dict[str, object]) -> str:
+    category_stats: dict[str, Counter[str]] = stats["category_stats"]  # type: ignore[assignment]
+    auth_stats: dict[str, Counter[str]] = stats["auth_access_stats"]  # type: ignore[assignment]
+    easiest = sorted(
+        category_stats.items(),
+        key=lambda item: (item[1].get("Ready today", 0) + item[1].get("Ready after gate", 0), item[1].get("Ready today", 0)),
+        reverse=True,
+    )[:3]
+    hardest = sorted(
+        category_stats.items(),
+        key=lambda item: item[1].get("Outreach needed", 0) + item[1].get("No public build path", 0) + item[1].get("Needs investigation", 0),
+        reverse=True,
+    )[:3]
+
+    oauth_total = auth_stats.get("OAuth2", Counter()).get("Total", 0)
+    oauth_ready = auth_stats.get("OAuth2", Counter()).get("Ready today", 0) + auth_stats.get("OAuth2", Counter()).get("Ready after gate", 0)
+    key_total = auth_stats.get("API key / bearer token", Counter()).get("Total", 0)
+    key_ready = auth_stats.get("API key / bearer token", Counter()).get("Ready today", 0) + auth_stats.get("API key / bearer token", Counter()).get("Ready after gate", 0)
+    official_mcp = [row["app"] for row in apps if is_official_mcp(row)]
+
+    easiest_text = ", ".join(f"{cat} ({counts.get('Ready today', 0)} ready today)" for cat, counts in easiest)
+    hardest_text = ", ".join(
+        f"{cat} ({counts.get('Outreach needed', 0) + counts.get('No public build path', 0) + counts.get('Needs investigation', 0)} blocked/unclear)"
+        for cat, counts in hardest
+    )
+    oauth_pct = round(oauth_ready / oauth_total * 100) if oauth_total else 0
+    key_pct = round(key_ready / key_total * 100) if key_total else 0
+
+    items = [
+        (
+            "Where to build first",
+            f"{easiest_text}. These have clear docs, reusable OAuth/token patterns and predictable objects."
+        ),
+        (
+            "Where outreach matters",
+            f"{hardest_text}. The blockers are not coding difficulty; they are account access, data licensing and public-doc gaps."
+        ),
+        (
+            "Auth predicts motion",
+            f"OAuth rows are {oauth_pct}% buildable now/after normal gates; API-key rows are {key_pct}%. OAuth usually means app-review work, while API keys often mean faster private/internal tools."
+        ),
+        (
+            "MCP is a strategic wedge",
+            f"{len(official_mcp)} apps already show official MCP or agent-native signals. That suggests Composio can prioritize wrappers around existing MCP surfaces before inventing new ones."
+        ),
+    ]
+    return "\n".join(
+        f'<div class="deep-card"><h3>{esc(title)}</h3><p>{esc(body)}</p></div>' for title, body in items
+    )
+
+
 def build_category_matrix(stats: dict[str, object]) -> str:
     category_stats: dict[str, Counter[str]] = stats["category_stats"]  # type: ignore[assignment]
     rows = []
-    order = ["Ready today", "Ready after gate", "Outreach needed", "No public build path", "Needs investigation"]
     for category, counts in category_stats.items():
-        cells = "".join(f"<td>{counts.get(name, 0)}</td>" for name in order)
+        cells = "".join(f"<td>{counts.get(name, 0)}</td>" for name in VERDICT_ORDER)
         rows.append(f"<tr><th>{esc(category)}</th><td>{counts['Total']}</td>{cells}</tr>")
     return "\n".join(rows)
 
@@ -380,6 +631,108 @@ def build_html(apps: list[dict[str, str]], audit: list[dict[str, str]], stats: d
     .insight:nth-child(2) {{ border-color: var(--amber); }}
     .insight:nth-child(3) {{ border-color: var(--blue); }}
     .insight:nth-child(4) {{ border-color: var(--red); }}
+    .charts {{
+      display: grid;
+      grid-template-columns: 320px minmax(320px, 1fr) minmax(320px, 1fr);
+      gap: 14px;
+      margin: 18px 0 22px;
+    }}
+    .chart-card {{
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 15px;
+      background: var(--white);
+    }}
+    .chart-card.wide {{
+      grid-column: 1 / -1;
+    }}
+    .donut {{
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 10px auto 12px;
+      position: relative;
+    }}
+    .donut::after {{
+      content: "";
+      position: absolute;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: var(--white);
+    }}
+    .donut b, .donut span {{
+      position: relative;
+      z-index: 1;
+      display: block;
+      text-align: center;
+    }}
+    .donut b {{ font-size: 28px; line-height: 1; }}
+    .donut span {{ color: var(--muted); font-size: 12px; }}
+    .legend {{
+      display: grid;
+      gap: 7px;
+    }}
+    .legend span {{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }}
+    .legend i {{
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      flex: 0 0 auto;
+    }}
+    .legend b {{ margin-left: auto; color: var(--ink); }}
+    .bars, .stacks {{
+      display: grid;
+      gap: 9px;
+    }}
+    .bar-row, .stack-row {{
+      display: grid;
+      grid-template-columns: minmax(110px, 1fr) minmax(120px, 2fr) 42px;
+      gap: 9px;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+    }}
+    .bar-track, .stack {{
+      height: 13px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #edf1f6;
+    }}
+    .bar-track i {{
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: var(--teal);
+    }}
+    .bar-track.amber i {{ background: var(--amber); }}
+    .stack {{
+      display: flex;
+    }}
+    .stack i {{
+      display: block;
+      height: 100%;
+    }}
+    .deep-grid {{
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 14px 0 22px;
+    }}
+    .deep-card {{
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: var(--panel);
+    }}
     .strip {{
       display: flex;
       gap: 10px;
@@ -514,8 +867,9 @@ def build_html(apps: list[dict[str, str]], audit: list[dict[str, str]], stats: d
     }}
     @media (max-width: 980px) {{
       header, main {{ padding-left: 18px; padding-right: 18px; }}
-      .kpis, .insights, .two-col, .flow {{ grid-template-columns: 1fr; }}
+      .kpis, .insights, .two-col, .flow, .charts, .deep-grid {{ grid-template-columns: 1fr; }}
       .controls {{ grid-template-columns: 1fr; }}
+      .chart-card.wide {{ grid-column: auto; }}
       h1 {{ font-size: 34px; }}
     }}
   </style>
@@ -523,8 +877,8 @@ def build_html(apps: list[dict[str, str]], audit: list[dict[str, str]], stats: d
 <body>
   <header>
     <div class="eyebrow">Composio take-home · AI Product Ops research agent</div>
-    <h1>100-app API scan: the easy wins are self-serve SaaS; the real blockers are review gates, paid data licenses, and missing public docs.</h1>
-    <p class="lead">I built a small research pipeline that classifies auth, access, API breadth, MCP readiness and buildability for 100 requested apps, then uses a verification loop to repair the rows most likely to hallucinate.</p>
+    <h1>100-app API scan: self-serve SaaS is buildable now; ads, fintech, enterprise commerce and private data products need review or outreach.</h1>
+    <p class="lead">I built a live docs research agent plus a repaired verification layer: the agent searches/fetches/extracts first-pass rows, a critic flags weak claims, and the final table records the human fixes instead of hiding them.</p>
     <div class="grid kpis">
       <div class="kpi"><b>{total}</b><span>apps researched across 10 categories</span></div>
       <div class="kpi"><b>{ready_total}</b><span>{pct(ready_total, total)} are buildable now or after ordinary account/review gates</span></div>
@@ -532,20 +886,35 @@ def build_html(apps: list[dict[str, str]], audit: list[dict[str, str]], stats: d
       <div class="kpi"><b>{gated_count}</b><span>{pct(gated_count, total)} need outreach, paid access, or had no public API path</span></div>
     </div>
     <div class="grid insights">
-      <div class="insight"><h3>OAuth2 is the default for user-owned SaaS.</h3><p>{auth_counts['OAuth2']} apps support OAuth/OAuth2. It dominates CRM, support, productivity, commerce marketplaces, ads and accounting.</p></div>
-      <div class="insight"><h3>API keys still win for machine/data products.</h3><p>{auth_counts['API key / bearer token']} apps expose API-key or bearer-token paths, especially scraping, email, observability, fintech and internal-tool APIs.</p></div>
-      <div class="insight"><h3>Developer and productivity apps are the fastest Composio wins.</h3><p>GitHub, Vercel, Cloudflare, Supabase, Linear, Notion, Airtable and similar tools have clear docs, scopes and predictable API objects.</p></div>
-      <div class="insight"><h3>Do not fake the hard cases.</h3><p>Pumble, FanBasis, Waterfall.io, Paygent Connect, PitchBook and NotebookLM are useful precisely because they reveal outreach/no-public-API patterns.</p></div>
+      <div class="insight"><h3>OAuth2 is the default for delegated SaaS.</h3><p>{auth_counts['OAuth2']} apps support OAuth/OAuth2. It dominates CRM, support, productivity, commerce marketplaces, ads and accounting.</p></div>
+      <div class="insight"><h3>API keys are faster for private tools.</h3><p>{auth_counts['API key / bearer token']} apps expose API-key or bearer-token paths, especially scraping, email, observability, fintech and internal-platform APIs.</p></div>
+      <div class="insight"><h3>Review gates cluster by industry.</h3><p>Ads/social, fintech, enterprise commerce and data vendors concentrate approval, business verification, compliance, paid-plan and partner gates.</p></div>
+      <div class="insight"><h3>Agent failures are product signal.</h3><p>Pumble, FanBasis, Waterfall.io, Paygent Connect, PitchBook and NotebookLM stayed blocked/low-confidence because public docs or direct API paths were not proven.</p></div>
     </div>
   </header>
 
   <main>
     <section>
+      <h2>Two-Minute View</h2>
+      <p>The strongest path is to build high-confidence self-serve APIs first, queue review-gated APIs next, and route hidden/enterprise APIs to outreach.</p>
+      <div class="charts">
+        {build_verdict_donut(stats)}
+        {build_auth_bars(stats)}
+        {build_blocker_bars(stats)}
+        {build_category_stacks(stats)}
+      </div>
+      <div class="deep-grid">
+        {build_deep_patterns(apps, stats)}
+      </div>
+    </section>
+
+    <section>
       <h2>Pattern Matrix</h2>
       <p>The raw 100-row table is below, but the operating answer is this matrix: build self-serve SaaS first, then queue review-gated categories, then send outreach for hidden enterprise/data products.</p>
       <div class="strip">
         <span class="pill">Self-serve: {access_counts['Self-serve']}</span>
-        <span class="pill">Review/admin/plan gate: {access_counts['Review, plan or admin gate']}</span>
+        <span class="pill">Self-serve + review/admin: {access_counts['Self-serve + review/admin gate']}</span>
+        <span class="pill">Review/paid/admin only: {access_counts['Review, paid or admin gate']}</span>
         <span class="pill">Gated or unknown: {access_counts['Gated / unknown']}</span>
         <span class="pill">Official MCP/agent path found: {stats['official_mcp_count']}</span>
         <span class="pill">High-confidence rows: {stats['high_confidence_count']}</span>
@@ -565,21 +934,24 @@ def build_html(apps: list[dict[str, str]], audit: list[dict[str, str]], stats: d
     <section class="two-col">
       <div>
         <h2>Agent Workflow</h2>
-        <p>The pipeline uses loop prompting as an operating pattern even when the final run is deterministic: collect evidence, classify fields, criticize likely hallucinations, then repair with human-verifiable evidence.</p>
+        <p>The pipeline uses a real first-pass research agent plus loop prompting as an operating pattern: collect evidence, classify fields, criticize likely hallucinations, then repair with human-verifiable evidence.</p>
         <div class="flow">
           <div class="step"><b>1. Seed</b><span>Start with app names, category, and official-doc hints.</span></div>
-          <div class="step"><b>2. Fetch</b><span>Resolve docs/search evidence and keep source URLs per row.</span></div>
-          <div class="step"><b>3. Extract</b><span>Classify auth, access gate, API breadth, MCP and buildability.</span></div>
+          <div class="step"><b>2. Search/fetch</b><span>Use direct hints, web search, docs fetch and optional Composio search hooks.</span></div>
+          <div class="step"><b>3. Extract</b><span>Classify auth, access gate, API breadth, MCP and buildability with heuristics or OpenAI.</span></div>
           <div class="step"><b>4. Critique</b><span>Flag ambiguous rows: hidden APIs, ads review, finance compliance.</span></div>
           <div class="step"><b>5. Repair</b><span>Human audit updates rows and records misses honestly.</span></div>
         </div>
       </div>
       <div>
         <h2>Runnable Proof</h2>
+        <p>Run the live first-pass research agent:</p>
+        <p><code>python3 src/agent.py --limit 5 --max-pages 3</code></p>
         <p>Run the research artifact locally:</p>
         <p><code>python3 src/research_agent.py --build</code></p>
         <p>Run URL verification loop:</p>
         <p><code>python3 src/research_agent.py --check-links --limit 40</code></p>
+        <p>Optional: <code>OPENAI_API_KEY=...</code> enables LLM extraction; <code>COMPOSIO_API_KEY=...</code> enables the Composio tool-search hook.</p>
         <p>Source repo: <a href="https://github.com/itzrahuldas/composio-research-agent" target="_blank" rel="noopener">github.com/itzrahuldas/composio-research-agent</a></p>
         <p>Composio-oriented output: <code>data/toolkit_queue.json</code> ranks P0 easy wins, P1 gated builds, and P3 outreach targets for toolkit planning.</p>
       </div>
