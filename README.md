@@ -4,6 +4,8 @@ Take-home assignment for researching 100 requested apps as potential Composio to
 
 The deliverable is a single self-contained case study page: [`index.html`](index.html).
 
+Short PDF summary: [`docs/composio_research_agent_summary.pdf`](docs/composio_research_agent_summary.pdf)
+
 Live page: https://itzrahuldas.github.io/composio-research-agent/
 
 Source repo: https://github.com/itzrahuldas/composio-research-agent
@@ -19,6 +21,7 @@ Source repo: https://github.com/itzrahuldas/composio-research-agent
 - `src/research_agent.py` - dependency-light research artifact generator and evidence URL checker.
 - `data/toolkit_queue.json` - generated Composio-style priority queue for what to build first.
 - `index.html` - generated two-minute case-study page.
+- `docs/composio_research_agent_summary.pdf` - 5-page submission summary PDF.
 
 ## Run It
 

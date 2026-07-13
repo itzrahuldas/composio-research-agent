@@ -1,0 +1,223 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2375 >>
+stream
+0.98 0.99 1.00 rg 0.0 0.0 612.0 792.0 re f
+0.08 0.13 0.20 rg BT /F2 31 Tf 54.0 706.0 Td (Composio Research Agent) Tj ET
+0.14 0.39 0.82 rg BT /F2 23 Tf 54.0 672.0 Td (App Integration Buildability Study) Tj ET
+0.25 0.30 0.38 rg BT /F1 11 Tf 54.0 636.0 Td (Rahul Das  |  github.com/itzrahuldas/composio-research-agent) Tj ET
+0.25 0.30 0.38 rg BT /F1 11 Tf 54.0 616.0 Td (Live page: https://itzrahuldas.github.io/composio-research-agent/) Tj ET
+0.68 0.75 0.86 RG 1.5 w 54.0 590.0 m 558.0 590.0 l S
+0.16 0.20 0.27 rg BT /F1 13 Tf 54.0 556.0 Td (A 2-layer agentic research pipeline that analyzed 100 apps across 10) Tj ET
+0.16 0.20 0.27 rg BT /F1 13 Tf 54.0 538.0 Td (categories to identify buildability status for Composio tool integrations.) Tj ET
+0.96 0.97 0.99 rg 0.80 0.84 0.90 RG 54.0 392.0 112.0 94.0 re B
+0.14 0.39 0.82 rg BT /F2 25 Tf 67.0 442.0 Td (100) Tj ET
+0.35 0.40 0.48 rg BT /F1 9 Tf 67.0 424.0 Td (apps researched) Tj ET
+0.96 0.97 0.99 rg 0.80 0.84 0.90 RG 185.0 392.0 112.0 94.0 re B
+0.14 0.39 0.82 rg BT /F2 25 Tf 198.0 442.0 Td (66) Tj ET
+0.35 0.40 0.48 rg BT /F1 9 Tf 198.0 424.0 Td (ready-to-build today) Tj ET
+0.96 0.97 0.99 rg 0.80 0.84 0.90 RG 316.0 392.0 112.0 94.0 re B
+0.14 0.39 0.82 rg BT /F2 25 Tf 329.0 442.0 Td (93.3%) Tj ET
+0.35 0.40 0.48 rg BT /F1 9 Tf 329.0 424.0 Td (field verification) Tj ET
+0.35 0.40 0.48 rg BT /F1 9 Tf 329.0 412.0 Td (accuracy after) Tj ET
+0.35 0.40 0.48 rg BT /F1 9 Tf 329.0 400.0 Td (critique + repair) Tj ET
+0.96 0.97 0.99 rg 0.80 0.84 0.90 RG 455.0 392.0 112.0 94.0 re B
+0.14 0.39 0.82 rg BT /F2 25 Tf 468.0 442.0 Td (20) Tj ET
+0.35 0.40 0.48 rg BT /F1 9 Tf 468.0 424.0 Td (app live agent run) Tj ET
+0.35 0.40 0.48 rg BT /F1 9 Tf 468.0 412.0 Td (with critic flags) Tj ET
+0.08 0.13 0.20 rg BT /F2 13 Tf 54.0 336.0 Td (Primary outcome) Tj ET
+0.18 0.22 0.28 rg BT /F2 11 Tf 54.0 312.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 11 Tf 68.0 312.0 Td (Build self-serve SaaS and developer platforms first.) Tj ET
+0.18 0.22 0.28 rg BT /F2 11 Tf 54.0 294.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 11 Tf 68.0 294.0 Td (Queue review-gated ads, fintech and enterprise commerce next.) Tj ET
+0.18 0.22 0.28 rg BT /F2 11 Tf 54.0 276.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 11 Tf 68.0 276.0 Td (Route hidden/private data products to outreach instead of pretending they) Tj ET
+0.18 0.22 0.28 rg BT /F1 11 Tf 68.0 262.0 Td (are buildable.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 2812 >>
+stream
+0.08 0.13 0.20 rg BT /F2 16 Tf 54.0 748.0 Td (Agent Architecture) Tj ET
+0.42 0.47 0.55 rg BT /F1 9 Tf 520.0 748.0 Td (2/5) Tj ET
+0.80 0.84 0.90 RG 1.0 w 54.0 735.0 m 558.0 735.0 l S
+0.08 0.13 0.20 rg BT /F2 13 Tf 54.0 694.0 Td (2-layer system) Tj ET
+0.96 0.97 0.99 rg 0.80 0.84 0.90 RG 70.0 610.0 150.0 42.0 re B
+0.08 0.13 0.20 rg BT /F2 11 Tf 82.0 627.0 Td (app_seeds.csv) Tj ET
+0.96 0.97 0.99 rg 0.80 0.84 0.90 RG 258.0 610.0 150.0 42.0 re B
+0.08 0.13 0.20 rg BT /F2 11 Tf 270.0 627.0 Td (agent.py) Tj ET
+0.96 0.97 0.99 rg 0.80 0.84 0.90 RG 445.0 610.0 110.0 42.0 re B
+0.08 0.13 0.20 rg BT /F2 11 Tf 457.0 627.0 Td (agent_runs/) Tj ET
+0.96 0.97 0.99 rg 0.80 0.84 0.90 RG 70.0 486.0 150.0 42.0 re B
+0.08 0.13 0.20 rg BT /F2 11 Tf 82.0 503.0 Td (apps_research.csv) Tj ET
+0.96 0.97 0.99 rg 0.80 0.84 0.90 RG 258.0 486.0 150.0 42.0 re B
+0.08 0.13 0.20 rg BT /F2 11 Tf 270.0 503.0 Td (research_agent.py) Tj ET
+0.96 0.97 0.99 rg 0.80 0.84 0.90 RG 445.0 486.0 110.0 42.0 re B
+0.08 0.13 0.20 rg BT /F2 11 Tf 457.0 503.0 Td (index.html) Tj ET
+0.14 0.39 0.82 RG 1.5 w 220.0 631.0 m 258.0 631.0 l S
+0.14 0.39 0.82 RG 1.5 w 408.0 631.0 m 445.0 631.0 l S
+0.14 0.39 0.82 RG 1.5 w 145.0 610.0 m 145.0 528.0 l S
+0.14 0.39 0.82 RG 1.5 w 220.0 507.0 m 258.0 507.0 l S
+0.14 0.39 0.82 RG 1.5 w 408.0 507.0 m 445.0 507.0 l S
+0.35 0.40 0.48 rg BT /F1 9 Tf 265.0 662.0 Td (Search -> Fetch -> Extract -> Critic) Tj ET
+0.35 0.40 0.48 rg BT /F1 9 Tf 248.0 458.0 Td (Chart generation + HTML rendering) Tj ET
+0.08 0.13 0.20 rg BT /F2 13 Tf 54.0 410.0 Td (Key components) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 382.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 382.0 Td (src/agent.py: web search, HTML parsing, heuristic extraction and critic) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 368.0 Td (flags.) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 350.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 350.0 Td (src/research_agent.py: computes patterns, renders charts, verification) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 336.0 Td (tables and the live HTML page.) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 318.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 318.0 Td (Composio SDK hook: optional --use-composio path for tool-mediated search) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 304.0 Td (when COMPOSIO_API_KEY is set.) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 286.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 286.0 Td (OpenAI LLM path: optional --use-llm path for structured extraction when) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 272.0 Td (OPENAI_API_KEY is set.) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 254.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 254.0 Td (Final matrix: human-repaired, evidence-backed rows in) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 240.0 Td (data/apps_research.csv.) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 2300 >>
+stream
+0.08 0.13 0.20 rg BT /F2 16 Tf 54.0 748.0 Td (Key Findings / Insights) Tj ET
+0.42 0.47 0.55 rg BT /F1 9 Tf 520.0 748.0 Td (3/5) Tj ET
+0.80 0.84 0.90 RG 1.0 w 54.0 735.0 m 558.0 735.0 l S
+0.08 0.13 0.20 rg BT /F2 13 Tf 54.0 700.0 Td (Verdict breakdown) Tj ET
+0.98 0.99 1.00 rg 0.80 0.84 0.90 RG 54.0 542.0 250.0 148.0 re B
+0.08 0.13 0.20 rg BT /F2 10 Tf 70.0 670.0 Td (Status) Tj ET
+0.08 0.13 0.20 rg BT /F2 10 Tf 244.0 670.0 Td (Count) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 70.0 646.0 Td (Ready today) Tj ET
+0.14 0.39 0.82 rg BT /F2 10 Tf 252.0 646.0 Td (66) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 70.0 623.0 Td (Ready after gate) Tj ET
+0.14 0.39 0.82 rg BT /F2 10 Tf 252.0 623.0 Td (20) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 70.0 600.0 Td (Outreach needed) Tj ET
+0.14 0.39 0.82 rg BT /F2 10 Tf 252.0 600.0 Td (9) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 70.0 577.0 Td (No public build path) Tj ET
+0.14 0.39 0.82 rg BT /F2 10 Tf 252.0 577.0 Td (3) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 70.0 554.0 Td (Investigate further) Tj ET
+0.14 0.39 0.82 rg BT /F2 10 Tf 252.0 554.0 Td (2) Tj ET
+0.08 0.13 0.20 rg BT /F2 13 Tf 54.0 514.0 Td (Top strategic insights) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 484.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 484.0 Td (Where to build first: Productivity \(10/10\), Dev/Infra \(9/10\), CRM \(9/10\)) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 470.0 Td (have clear docs and reusable OAuth/token patterns.) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 452.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 452.0 Td (Where outreach matters: Fintech and Ecommerce have the densest blocked/gated) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 438.0 Td (rows; this is licensing/access friction, not pure engineering difficulty.) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 420.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 420.0 Td (MCP is a wedge: 19 apps show official MCP or agent-native signals, so) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 406.0 Td (Composio can wrap existing MCP surfaces first.) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 388.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 388.0 Td (Auth x buildability: OAuth rows are about 92% buildable now/after normal) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 374.0 Td (gates; API-key rows are about 93%.) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 1963 >>
+stream
+0.08 0.13 0.20 rg BT /F2 16 Tf 54.0 748.0 Td (Verification & Methodology) Tj ET
+0.42 0.47 0.55 rg BT /F1 9 Tf 520.0 748.0 Td (4/5) Tj ET
+0.80 0.84 0.90 RG 1.0 w 54.0 735.0 m 558.0 735.0 l S
+0.08 0.13 0.20 rg BT /F2 13 Tf 54.0 700.0 Td (Human-in-the-loop process) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 670.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 670.0 Td (First pass: live agent ran on 5-20 app samples per batch.) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 652.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 652.0 Td (27 apps manually sampled, stratified across all 10 categories.) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 634.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 634.0 Td (135 field checks performed across auth, access, surface, verdict and) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 620.0 Td (evidence.) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 602.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 602.0 Td (First pass: 90/135 fields supported \(66.7%\).) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 584.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 584.0 Td (After critique + repair: 126/135 fields supported \(93.3%\).) Tj ET
+0.18 0.22 0.28 rg BT /F2 10 Tf 54.0 566.0 Td (-) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 68.0 566.0 Td (Misses are documented in verification_field_audit.csv with evidence URLs.) Tj ET
+0.98 0.99 1.00 rg 0.80 0.84 0.90 RG 54.0 310.0 504.0 142.0 re B
+0.08 0.13 0.20 rg BT /F2 13 Tf 72.0 420.0 Td (Honest limitation) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 72.0 392.0 Td (DuckDuckGo rate-limits and many enterprise doc pages are JS-rendered,) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 72.0 378.0 Td (making raw HTML scraping noisy beyond roughly 20 apps. The final matrix) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 72.0 364.0 Td (combines agent extraction with human verification, which is a realistic) Tj ET
+0.18 0.22 0.28 rg BT /F1 10 Tf 72.0 350.0 Td (production pattern for high-accuracy API research.) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 1833 >>
+stream
+0.08 0.13 0.20 rg BT /F2 16 Tf 54.0 748.0 Td (How to Run It) Tj ET
+0.42 0.47 0.55 rg BT /F1 9 Tf 520.0 748.0 Td (5/5) Tj ET
+0.80 0.84 0.90 RG 1.0 w 54.0 735.0 m 558.0 735.0 l S
+0.06 0.08 0.11 rg 0.06 0.08 0.11 RG 54.0 330.0 504.0 360.0 re B
+0.70 0.78 0.88 rg BT /F1 9 Tf 72.0 664.0 Td (# Step 1: Install) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 646.0 Td (pip install -r requirements.txt) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 628.0 Td () Tj ET
+0.70 0.78 0.88 rg BT /F1 9 Tf 72.0 610.0 Td (# Step 2: Run live agent) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 592.0 Td (python src/agent.py --limit 20 --max-pages 3) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 574.0 Td () Tj ET
+0.70 0.78 0.88 rg BT /F1 9 Tf 72.0 556.0 Td (# Step 3: Build output) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 538.0 Td (python src/research_agent.py --build) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 520.0 Td () Tj ET
+0.70 0.78 0.88 rg BT /F1 9 Tf 72.0 502.0 Td (# Optional: With LLM extraction) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 484.0 Td (OPENAI_API_KEY=... python src/agent.py --use-llm --limit 5) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 466.0 Td () Tj ET
+0.70 0.78 0.88 rg BT /F1 9 Tf 72.0 448.0 Td (# Optional: With Composio) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 430.0 Td (COMPOSIO_API_KEY=... python src/agent.py --use-composio --limit 5) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 412.0 Td () Tj ET
+0.70 0.78 0.88 rg BT /F1 9 Tf 72.0 394.0 Td (# Tests) Tj ET
+0.92 0.95 0.98 rg BT /F1 9 Tf 72.0 376.0 Td (python -m unittest tests/test_agent.py) Tj ET
+0.08 0.13 0.20 rg BT /F2 13 Tf 54.0 270.0 Td (Links) Tj ET
+0.14 0.39 0.82 rg BT /F1 10 Tf 54.0 242.0 Td (GitHub: https://github.com/itzrahuldas/composio-research-agent) Tj ET
+0.14 0.39 0.82 rg BT /F1 10 Tf 54.0 222.0 Td (Live page: https://itzrahuldas.github.io/composio-research-agent/) Tj ET
+endstream
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000147 00000 n 
+0000000217 00000 n 
+0000000292 00000 n 
+0000000428 00000 n 
+0000002855 00000 n 
+0000002991 00000 n 
+0000005855 00000 n 
+0000005992 00000 n 
+0000008345 00000 n 
+0000008483 00000 n 
+0000010499 00000 n 
+0000010637 00000 n 
+trailer
+<< /Size 15 /Root 1 0 R >>
+startxref
+12523
+%%EOF
