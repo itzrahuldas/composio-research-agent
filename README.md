@@ -34,6 +34,8 @@ python3 src/agent.py --limit 5 --max-pages 3 \
   --csv-output data/agent_runs/sample_5.csv
 ```
 
+> **Note on Scale**: The live agent is typically validated on 5-20 app samples to avoid duckduckgo rate limits and aggressive scraper blocking. The full 100-row matrix combines agent first-pass extraction with human-verified repairs (documented in `verification_field_audit.csv`).
+
 Optional AI/tool path:
 
 ```bash

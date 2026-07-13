@@ -1,0 +1,290 @@
+{
+  "generated_at": "2026-07-13T07:42:22.645144+00:00",
+  "method": "Deterministic critic flags rows where auth/access/surface/evidence confidence is weak. Human verification then repairs the final CSV.",
+  "flag_counts": {
+    "auth_missing": 13,
+    "access_unclear": 11,
+    "surface_unclear": 6,
+    "low_confidence": 4
+  },
+  "rows": [
+    {
+      "app": "Salesforce",
+      "confidence": "Medium",
+      "verdict": "Investigate further",
+      "flags": [
+        "auth_missing",
+        "access_unclear",
+        "surface_unclear"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://developer.salesforce.com/docs/apis",
+        "https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm",
+        "https://salesforce.com/docs"
+      ]
+    },
+    {
+      "app": "HubSpot",
+      "confidence": "Medium",
+      "verdict": "Ready",
+      "flags": [
+        "auth_missing"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://developers.hubspot.com/docs/api/oauth-quickstart",
+        "https://developers.hubspot.com/docs/api"
+      ]
+    },
+    {
+      "app": "Pipedrive",
+      "confidence": "High",
+      "verdict": "Ready with gate",
+      "flags": [],
+      "next_action": "No immediate repair required.",
+      "evidence": [
+        "https://developers.pipedrive.com/docs/api/v1",
+        "https://pipedrive.com/developers",
+        "https://pipedrive.com/api"
+      ]
+    },
+    {
+      "app": "Attio",
+      "confidence": "High",
+      "verdict": "Ready",
+      "flags": [
+        "access_unclear"
+      ],
+      "next_action": "Check signup, marketplace review, pricing or admin docs.",
+      "evidence": [
+        "https://docs.attio.com/rest-api/overview",
+        "https://attio.com/developers",
+        "https://attio.com/docs"
+      ]
+    },
+    {
+      "app": "Twenty",
+      "confidence": "Medium",
+      "verdict": "Ready",
+      "flags": [
+        "auth_missing",
+        "access_unclear"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://twenty.com/developers",
+        "https://developers.twenty.com",
+        "https://developer.twenty.com"
+      ]
+    },
+    {
+      "app": "Podio",
+      "confidence": "Medium",
+      "verdict": "Ready",
+      "flags": [
+        "auth_missing",
+        "access_unclear"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://podio.com/developers",
+        "https://podio.com/api-docs",
+        "https://podio.com/docs/api"
+      ]
+    },
+    {
+      "app": "Zoho CRM",
+      "confidence": "Medium",
+      "verdict": "Investigate further",
+      "flags": [
+        "auth_missing",
+        "surface_unclear"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://zoho.com/docs",
+        "https://zoho.com/developer",
+        "https://developers.zoho.com"
+      ]
+    },
+    {
+      "app": "Close",
+      "confidence": "High",
+      "verdict": "Ready",
+      "flags": [],
+      "next_action": "No immediate repair required.",
+      "evidence": [
+        "https://close.com/api",
+        "https://developer.close.com"
+      ]
+    },
+    {
+      "app": "Copper",
+      "confidence": "High",
+      "verdict": "Ready",
+      "flags": [
+        "access_unclear"
+      ],
+      "next_action": "Check signup, marketplace review, pricing or admin docs.",
+      "evidence": [
+        "https://copper.com/developers",
+        "https://copper.com/api-docs",
+        "https://copper.com/docs"
+      ]
+    },
+    {
+      "app": "DealCloud",
+      "confidence": "High",
+      "verdict": "Ready",
+      "flags": [
+        "access_unclear"
+      ],
+      "next_action": "Check signup, marketplace review, pricing or admin docs.",
+      "evidence": [
+        "https://api.docs.dealcloud.com/docs",
+        "https://api.docs.dealcloud.com"
+      ]
+    },
+    {
+      "app": "Zendesk",
+      "confidence": "High",
+      "verdict": "Ready",
+      "flags": [
+        "auth_missing"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://developer.zendesk.com/api-reference",
+        "https://zendesk.com/developers",
+        "https://zendesk.com/api"
+      ]
+    },
+    {
+      "app": "Intercom",
+      "confidence": "High",
+      "verdict": "Ready",
+      "flags": [
+        "auth_missing"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://intercom.com/developers",
+        "https://intercom.com/api",
+        "https://developers.intercom.com"
+      ]
+    },
+    {
+      "app": "Freshdesk",
+      "confidence": "High",
+      "verdict": "Ready",
+      "flags": [
+        "access_unclear"
+      ],
+      "next_action": "Check signup, marketplace review, pricing or admin docs.",
+      "evidence": [
+        "https://developers.freshdesk.com/api",
+        "https://developers.freshdesk.com"
+      ]
+    },
+    {
+      "app": "Front",
+      "confidence": "Low",
+      "verdict": "Investigate further",
+      "flags": [
+        "auth_missing",
+        "access_unclear",
+        "surface_unclear",
+        "low_confidence"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://front.com/api"
+      ]
+    },
+    {
+      "app": "Pylon",
+      "confidence": "Low",
+      "verdict": "Not buildable yet",
+      "flags": [
+        "auth_missing",
+        "surface_unclear",
+        "low_confidence"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://usepylon.com/developers",
+        "https://usepylon.com/api-docs"
+      ]
+    },
+    {
+      "app": "LiveAgent",
+      "confidence": "Low",
+      "verdict": "Not buildable yet",
+      "flags": [
+        "auth_missing",
+        "surface_unclear",
+        "low_confidence"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://liveagent.com/developers",
+        "https://liveagent.com/api-docs"
+      ]
+    },
+    {
+      "app": "Plain",
+      "confidence": "Medium",
+      "verdict": "Ready",
+      "flags": [
+        "access_unclear"
+      ],
+      "next_action": "Check signup, marketplace review, pricing or admin docs.",
+      "evidence": [
+        "https://plain.com/docs"
+      ]
+    },
+    {
+      "app": "Help Scout",
+      "confidence": "Low",
+      "verdict": "Investigate further",
+      "flags": [
+        "auth_missing",
+        "access_unclear",
+        "surface_unclear",
+        "low_confidence"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://helpscout.com/docs",
+        "https://developer.helpscout.com"
+      ]
+    },
+    {
+      "app": "Gorgias",
+      "confidence": "Medium",
+      "verdict": "Ready with gate",
+      "flags": [
+        "auth_missing"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://developers.gorgias.com",
+        "https://developer.gorgias.com"
+      ]
+    },
+    {
+      "app": "Gladly",
+      "confidence": "Medium",
+      "verdict": "Ready",
+      "flags": [
+        "auth_missing",
+        "access_unclear"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://developer.gladly.com"
+      ]
+    }
+  ]
+}

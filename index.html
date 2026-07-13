@@ -537,9 +537,9 @@
       <h2>Pattern Matrix</h2>
       <p>The raw 100-row table is below, but the operating answer is this matrix: build self-serve SaaS first, then queue review-gated categories, then send outreach for hidden enterprise/data products.</p>
       <div class="strip">
-        <span class="pill">Self-serve: 25</span>
-        <span class="pill">Self-serve + review/admin: 54</span>
-        <span class="pill">Review/paid/admin only: 9</span>
+        <span class="pill">Self-serve: 54</span>
+        <span class="pill">Self-serve + review/admin: 28</span>
+        <span class="pill">Review/paid/admin only: 6</span>
         <span class="pill">Gated or unknown: 12</span>
         <span class="pill">Official MCP/agent path found: 19</span>
         <span class="pill">High-confidence rows: 81</span>
@@ -1114,7 +1114,7 @@
               <td><strong>Podio</strong><span>Work management and CRM-style app platform from Citrix for workspaces and items.</span></td>
               <td>CRM and Sales</td>
               <td>OAuth2; app token flow</td>
-              <td>Self-serve + review/admin gate<span>Self-serve developer docs, but app/workspace access depends on a Podio account/admin.</span></td>
+              <td>Self-serve<span>Self-serve developer docs, but app/workspace access depends on a Podio account/admin.</span></td>
               <td>Broad REST API for apps, items, files, tasks, comments and hooks.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Older API conventions and workspace-level permissions.</span></td>
               <td><b class="confidence high">High</b><a href="https://developers.podio.com/" target="_blank" rel="noopener">proof 1</a> <a href="https://developers.podio.com/authentication" target="_blank" rel="noopener">proof 2</a></td>
@@ -1150,7 +1150,7 @@
               <td><strong>Copper</strong><span>Google Workspace-native CRM for people, companies, opportunities and tasks.</span></td>
               <td>CRM and Sales</td>
               <td>API key plus user email headers</td>
-              <td>Self-serve + review/admin gate<span>API keys are self-serve for account admins/users with permissions; plan limits apply.</span></td>
+              <td>Self-serve<span>API keys are self-serve for account admins/users with permissions; plan limits apply.</span></td>
               <td>Documented REST API for core CRM resources and webhooks.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Header-based auth is simple but less OAuth-native for delegated agents.</span></td>
               <td><b class="confidence high">High</b><a href="https://developer.copper.com/" target="_blank" rel="noopener">proof 1</a> <a href="https://developer.copper.com/introduction/authentication.html" target="_blank" rel="noopener">proof 2</a></td>
@@ -1174,7 +1174,7 @@
               <td><strong>Zendesk</strong><span>Customer support suite for tickets, users, help center and messaging.</span></td>
               <td>Support and Helpdesk</td>
               <td>OAuth2; API token; basic auth with token</td>
-              <td>Self-serve + review/admin gate<span>Self-serve trial and developer docs; admins control token/OAuth enablement.</span></td>
+              <td>Self-serve<span>Self-serve trial and developer docs; admins control token/OAuth enablement.</span></td>
               <td>Very broad REST APIs across Support, Guide, Talk, Sell, Sunshine and webhooks.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Many products and permission models; must bound tool surface.</span></td>
               <td><b class="confidence high">High</b><a href="https://developer.zendesk.com/api-reference/" target="_blank" rel="noopener">proof 1</a> <a href="https://developer.zendesk.com/documentation/api-basics/authentication/creating-and-using-oauth-tokens-with-the-api/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1234,7 +1234,7 @@
               <td><strong>LiveAgent</strong><span>Helpdesk/live chat suite for tickets, chats, calls and knowledge base.</span></td>
               <td>Support and Helpdesk</td>
               <td>API key</td>
-              <td>Self-serve + review/admin gate<span>Self-serve trial can generate API keys; admin permissions required.</span></td>
+              <td>Self-serve<span>Self-serve trial can generate API keys; admin permissions required.</span></td>
               <td>Documented REST API for tickets, chats, contacts, agents and departments.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Older helpdesk API patterns and product-specific endpoint naming.</span></td>
               <td><b class="confidence high">High</b><a href="https://support.liveagent.com/840770-Complete-API-reference" target="_blank" rel="noopener">proof 1</a> <a href="https://support.liveagent.com/802463-REST-API" target="_blank" rel="noopener">proof 2</a></td>
@@ -1246,7 +1246,7 @@
               <td><strong>Plain</strong><span>Developer-first customer support platform for issues, customers and events.</span></td>
               <td>Support and Helpdesk</td>
               <td>Bearer API key</td>
-              <td>Self-serve + review/admin gate<span>Self-serve workspace and API keys are available; production usage tied to plan/workspace.</span></td>
+              <td>Self-serve<span>Self-serve workspace and API keys are available; production usage tied to plan/workspace.</span></td>
               <td>GraphQL API and API reference for customers, threads, issues, events and webhooks.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>GraphQL schema needs careful tool chunking for agent UX.</span></td>
               <td><b class="confidence high">High</b><a href="https://www.plain.com/docs/api-reference" target="_blank" rel="noopener">proof 1</a> <a href="https://www.plain.com/docs/graphql/authentication" target="_blank" rel="noopener">proof 2</a></td>
@@ -1270,7 +1270,7 @@
               <td><strong>Gorgias</strong><span>Ecommerce helpdesk for customer support conversations and orders.</span></td>
               <td>Support and Helpdesk</td>
               <td>Basic auth; API key/password; OAuth2 for apps</td>
-              <td>Self-serve + review/admin gate<span>Self-serve for customers/developers, but useful API access depends on a Gorgias account/plan.</span></td>
+              <td>Self-serve<span>Self-serve for customers/developers, but useful API access depends on a Gorgias account/plan.</span></td>
               <td>REST API covers customers, tickets, messages, tags, integrations and ecommerce context.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Ecommerce-specific permissions and ticket action safety.</span></td>
               <td><b class="confidence high">High</b><a href="https://developers.gorgias.com/" target="_blank" rel="noopener">proof 1</a> <a href="https://developers.gorgias.com/reference/authentication" target="_blank" rel="noopener">proof 2</a></td>
@@ -1318,7 +1318,7 @@
               <td><strong>Zoho Cliq</strong><span>Team chat and collaboration product in the Zoho suite.</span></td>
               <td>Communications and Messaging</td>
               <td>OAuth2</td>
-              <td>Self-serve + review/admin gate<span>Self-serve Zoho developer console and Cliq org; admin scopes apply.</span></td>
+              <td>Self-serve<span>Self-serve Zoho developer console and Cliq org; admin scopes apply.</span></td>
               <td>Documented REST API for chats, channels, bots, commands, messages and organization data.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Zoho data center/scopes and bot install flow.</span></td>
               <td><b class="confidence high">High</b><a href="https://www.zoho.com/cliq/help/restapi/v2/" target="_blank" rel="noopener">proof 1</a> <a href="https://api-console.zoho.com/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1390,7 +1390,7 @@
               <td><strong>Aircall</strong><span>Cloud phone system and call center platform.</span></td>
               <td>Communications and Messaging</td>
               <td>Basic auth/API ID and token; OAuth2 for public apps</td>
-              <td>Self-serve + review/admin gate<span>Self-serve developer docs; API credentials require an Aircall account/admin.</span></td>
+              <td>Self-serve<span>Self-serve developer docs; API credentials require an Aircall account/admin.</span></td>
               <td>REST API covers calls, users, teams, numbers, contacts, tags and webhooks.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Telephony actions and call recording data require careful permissioning.</span></td>
               <td><b class="confidence high">High</b><a href="https://developer.aircall.io/api-references/" target="_blank" rel="noopener">proof 1</a> <a href="https://developer.aircall.io/api-references/#authentication" target="_blank" rel="noopener">proof 2</a></td>
@@ -1486,7 +1486,7 @@
               <td><strong>systeme.io</strong><span>All-in-one funnel, email, course and online business platform.</span></td>
               <td>Marketing, Ads, Email and Social</td>
               <td>Public API key / bearer token</td>
-              <td>Self-serve + review/admin gate<span>Public API keys are self-serve in account settings; plan/feature limits may apply.</span></td>
+              <td>Self-serve<span>Public API keys are self-serve in account settings; plan/feature limits may apply.</span></td>
               <td>Documented REST API for selected contacts, tags, funnels, sales and course resources.<span class="muted">Official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Surface is narrower than HubSpot/Klaviyo and docs are still maturing.</span></td>
               <td><b class="confidence medium">Medium</b><a href="https://developer.systeme.io/reference/api" target="_blank" rel="noopener">proof 1</a> <a href="https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io" target="_blank" rel="noopener">proof 2</a></td>
@@ -1546,7 +1546,7 @@
               <td><strong>WooCommerce</strong><span>WordPress ecommerce plugin for products, orders, coupons and customers.</span></td>
               <td>Ecommerce</td>
               <td>Consumer key/secret; Basic auth over HTTPS; OAuth1 legacy</td>
-              <td>Self-serve + review/admin gate<span>Self-serve on any WooCommerce store; requires store admin to create keys.</span></td>
+              <td>Self-serve<span>Self-serve on any WooCommerce store; requires store admin to create keys.</span></td>
               <td>REST API covers products, orders, customers, coupons, reports and settings.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Self-hosted variation, plugin conflicts and per-store permissions.</span></td>
               <td><b class="confidence high">High</b><a href="https://woocommerce.com/document/woocommerce-rest-api/" target="_blank" rel="noopener">proof 1</a> <a href="https://woocommerce.github.io/woocommerce-rest-api-docs/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1582,7 +1582,7 @@
               <td><strong>Magento (Adobe Commerce)</strong><span>Open-source and Adobe-hosted ecommerce platform for catalogs, carts and orders.</span></td>
               <td>Ecommerce</td>
               <td>Bearer integration token; OAuth1; admin/customer tokens</td>
-              <td>Self-serve + review/admin gate<span>Self-serve for open-source Magento; Adobe Commerce Cloud is paid/enterprise.</span></td>
+              <td>Self-serve<span>Self-serve for open-source Magento; Adobe Commerce Cloud is paid/enterprise.</span></td>
               <td>Broad REST and GraphQL APIs for catalog, checkout, orders, customers and admin resources.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Deployment/version differences and admin token safety.</span></td>
               <td><b class="confidence high">High</b><a href="https://developer.adobe.com/commerce/webapi/rest/" target="_blank" rel="noopener">proof 1</a> <a href="https://developer.adobe.com/commerce/webapi/get-started/authentication/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1654,7 +1654,7 @@
               <td><strong>DataForSEO</strong><span>SEO and SERP data APIs for keywords, rankings, backlinks and business data.</span></td>
               <td>Data, SEO and Scraping</td>
               <td>Basic auth with API login/password</td>
-              <td>Self-serve + review/admin gate<span>Self-serve signup with paid credits; sandbox-like trial credits may be available.</span></td>
+              <td>Self-serve<span>Self-serve signup with paid credits; sandbox-like trial credits may be available.</span></td>
               <td>Very broad REST APIs for SERP, keywords, backlinks, on-page, content and business data.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Cost control and task polling/async workflows.</span></td>
               <td><b class="confidence high">High</b><a href="https://docs.dataforseo.com/v3/" target="_blank" rel="noopener">proof 1</a> <a href="https://dataforseo.com/apis" target="_blank" rel="noopener">proof 2</a></td>
@@ -1762,7 +1762,7 @@
               <td><strong>Clay</strong><span>Data enrichment and workflow platform for GTM teams.</span></td>
               <td>Data, SEO and Scraping</td>
               <td>API key; webhooks; workspace tokens</td>
-              <td>Review, paid or admin gate<span>Docs exist, but meaningful API use depends on paid workspace and credits.</span></td>
+              <td>Self-serve<span>Docs exist, but meaningful API use depends on paid workspace and credits.</span></td>
               <td>Moderate API/webhook surface for tables, actions, enrichment and integrations.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-after-gate">Ready after gate</b><span>Credit costs, workspace permissions and still-evolving API docs.</span></td>
               <td><b class="confidence medium">Medium</b><a href="https://docs.clay.com/" target="_blank" rel="noopener">proof 1</a> <a href="https://www.clay.com/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1774,7 +1774,7 @@
               <td><strong>GitHub</strong><span>Code hosting and collaboration platform for repos, issues, pull requests and actions.</span></td>
               <td>Developer, Infra and Data platforms</td>
               <td>OAuth2; GitHub App; fine-grained PAT</td>
-              <td>Self-serve + review/admin gate<span>Self-serve developer apps and tokens; org admins may restrict app installation.</span></td>
+              <td>Self-serve<span>Self-serve developer apps and tokens; org admins may restrict app installation.</span></td>
               <td>Very broad REST and GraphQL APIs plus webhooks and GitHub Apps.<span class="muted">Official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Permission scopes and organization app approval.</span></td>
               <td><b class="confidence high">High</b><a href="https://docs.github.com/en/rest" target="_blank" rel="noopener">proof 1</a> <a href="https://github.com/github/github-mcp-server" target="_blank" rel="noopener">proof 2</a></td>
@@ -1798,7 +1798,7 @@
               <td><strong>Netlify</strong><span>Web hosting and deployment platform for sites, builds, functions and forms.</span></td>
               <td>Developer, Infra and Data platforms</td>
               <td>OAuth2; personal access token</td>
-              <td>Self-serve + review/admin gate<span>Self-serve account/tokens; team/admin permissions apply.</span></td>
+              <td>Self-serve<span>Self-serve account/tokens; team/admin permissions apply.</span></td>
               <td>Documented REST API for sites, deploys, builds, DNS, forms and functions.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Deployment and DNS mutations need strong guardrails.</span></td>
               <td><b class="confidence high">High</b><a href="https://docs.netlify.com/api/get-started/" target="_blank" rel="noopener">proof 1</a> <a href="https://open-api.netlify.com/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1834,7 +1834,7 @@
               <td><strong>Neo4j</strong><span>Graph database platform and Aura cloud service.</span></td>
               <td>Developer, Infra and Data platforms</td>
               <td>Basic auth for DB; OAuth2/client credentials for Aura APIs</td>
-              <td>Self-serve + review/admin gate<span>Self-serve Aura free/trial; enterprise features require paid/admin.</span></td>
+              <td>Self-serve<span>Self-serve Aura free/trial; enterprise features require paid/admin.</span></td>
               <td>APIs span Bolt/HTTP query, Aura management, GraphQL library and drivers.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>DB credentials vs cloud-management APIs; query safety.</span></td>
               <td><b class="confidence high">High</b><a href="https://neo4j.com/docs/" target="_blank" rel="noopener">proof 1</a> <a href="https://neo4j.com/docs/aura/platform/api/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1846,7 +1846,7 @@
               <td><strong>Snowflake</strong><span>Cloud data warehouse and data platform.</span></td>
               <td>Developer, Infra and Data platforms</td>
               <td>Key-pair JWT; OAuth; username/password; PAT/session tokens</td>
-              <td>Self-serve + review/admin gate<span>Self-serve trials exist, but org/account/admin setup is required for production.</span></td>
+              <td>Self-serve<span>Self-serve trials exist, but org/account/admin setup is required for production.</span></td>
               <td>Broad SQL API, Snowpark, REST APIs, drivers and Native Apps.<span class="muted">Official MCP</span></td>
               <td><b class="badge ready-after-gate">Ready after gate</b><span>Account provisioning, network policies and sensitive data controls.</span></td>
               <td><b class="confidence high">High</b><a href="https://docs.snowflake.com/en/developer-guide/sql-api/index" target="_blank" rel="noopener">proof 1</a> <a href="https://docs.snowflake.com/en/user-guide/key-pair-auth" target="_blank" rel="noopener">proof 2</a></td>
@@ -1858,7 +1858,7 @@
               <td><strong>MongoDB Atlas</strong><span>Managed MongoDB cloud with clusters, projects, backups and data APIs.</span></td>
               <td>Developer, Infra and Data platforms</td>
               <td>API keys with digest; OAuth2 service accounts; database username/password</td>
-              <td>Self-serve + review/admin gate<span>Self-serve free cluster and API keys; org roles/admin controls apply.</span></td>
+              <td>Self-serve<span>Self-serve free cluster and API keys; org roles/admin controls apply.</span></td>
               <td>Broad Atlas Admin API, Data API, Search, charts and database drivers.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Project/org permissions and data-access safety.</span></td>
               <td><b class="confidence high">High</b><a href="https://www.mongodb.com/docs/atlas/api/" target="_blank" rel="noopener">proof 1</a> <a href="https://www.mongodb.com/docs/atlas/api/authentication/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1870,7 +1870,7 @@
               <td><strong>Datadog</strong><span>Observability platform for metrics, logs, traces, incidents and monitors.</span></td>
               <td>Developer, Infra and Data platforms</td>
               <td>API key plus application key</td>
-              <td>Self-serve + review/admin gate<span>Self-serve trial/account; org admins control keys and scopes.</span></td>
+              <td>Self-serve<span>Self-serve trial/account; org admins control keys and scopes.</span></td>
               <td>Very broad REST API for monitors, metrics, logs, dashboards, incidents, SLOs and more.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>High-impact alert/monitor edits and site-region handling.</span></td>
               <td><b class="confidence high">High</b><a href="https://docs.datadoghq.com/api/latest/" target="_blank" rel="noopener">proof 1</a> <a href="https://docs.datadoghq.com/account_management/api-app-keys/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1882,7 +1882,7 @@
               <td><strong>Sentry</strong><span>Error monitoring and performance platform for projects, issues and releases.</span></td>
               <td>Developer, Infra and Data platforms</td>
               <td>Auth token; OAuth2</td>
-              <td>Self-serve + review/admin gate<span>Self-serve account and internal integrations; org admins may restrict installs.</span></td>
+              <td>Self-serve<span>Self-serve account and internal integrations; org admins may restrict installs.</span></td>
               <td>Broad REST API for issues, projects, events, releases, metrics and webhooks.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Issue mutation safety and org/project token scoping.</span></td>
               <td><b class="confidence high">High</b><a href="https://docs.sentry.io/api/" target="_blank" rel="noopener">proof 1</a> <a href="https://docs.sentry.io/product/integrations/integration-platform/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1906,7 +1906,7 @@
               <td><strong>Airtable</strong><span>No-code database/spreadsheet platform for bases, tables and automations.</span></td>
               <td>Productivity and Project Management</td>
               <td>OAuth2; personal access token</td>
-              <td>Self-serve + review/admin gate<span>Self-serve developer tokens/apps; workspace admins can restrict access.</span></td>
+              <td>Self-serve<span>Self-serve developer tokens/apps; workspace admins can restrict access.</span></td>
               <td>Broad REST API for records, bases, schema, webhooks and enterprise admin.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Base-specific schema discovery and rate limits.</span></td>
               <td><b class="confidence high">High</b><a href="https://airtable.com/developers/web/api/introduction" target="_blank" rel="noopener">proof 1</a> <a href="https://airtable.com/developers/web/guides/personal-access-tokens" target="_blank" rel="noopener">proof 2</a></td>
@@ -1942,7 +1942,7 @@
               <td><strong>Asana</strong><span>Work management platform for tasks, projects, portfolios and goals.</span></td>
               <td>Productivity and Project Management</td>
               <td>OAuth2; personal access token</td>
-              <td>Self-serve + review/admin gate<span>Self-serve developer console and PATs; workspace admins can restrict apps.</span></td>
+              <td>Self-serve<span>Self-serve developer console and PATs; workspace admins can restrict apps.</span></td>
               <td>Broad REST API for tasks, projects, users, portfolios, goals and webhooks.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Workspace/project permissions and task mutation safety.</span></td>
               <td><b class="confidence high">High</b><a href="https://developers.asana.com/docs" target="_blank" rel="noopener">proof 1</a> <a href="https://developers.asana.com/docs/authentication" target="_blank" rel="noopener">proof 2</a></td>
@@ -1954,7 +1954,7 @@
               <td><strong>Monday.com</strong><span>Work OS for boards, items, automations and dashboards.</span></td>
               <td>Productivity and Project Management</td>
               <td>API token; OAuth2</td>
-              <td>Self-serve + review/admin gate<span>Self-serve developer center and app marketplace; account plan limits apply.</span></td>
+              <td>Self-serve<span>Self-serve developer center and app marketplace; account plan limits apply.</span></td>
               <td>Broad GraphQL API for boards, items, columns, users, updates and apps.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>GraphQL complexity/rate limits and board schema discovery.</span></td>
               <td><b class="confidence high">High</b><a href="https://developer.monday.com/api-reference/docs" target="_blank" rel="noopener">proof 1</a> <a href="https://developer.monday.com/api-reference/docs/authentication" target="_blank" rel="noopener">proof 2</a></td>
@@ -1966,7 +1966,7 @@
               <td><strong>ClickUp</strong><span>Productivity platform for tasks, docs, goals and spaces.</span></td>
               <td>Productivity and Project Management</td>
               <td>OAuth2; personal API token</td>
-              <td>Self-serve + review/admin gate<span>Self-serve developer apps/tokens; workspace admins may restrict access.</span></td>
+              <td>Self-serve<span>Self-serve developer apps/tokens; workspace admins may restrict access.</span></td>
               <td>Broad REST API for teams, spaces, folders, lists, tasks, docs and webhooks.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Hierarchy mapping and write safety for task/status changes.</span></td>
               <td><b class="confidence high">High</b><a href="https://clickup.com/api" target="_blank" rel="noopener">proof 1</a> <a href="https://clickup.com/api/developer-portal/authentication/" target="_blank" rel="noopener">proof 2</a></td>
@@ -1990,7 +1990,7 @@
               <td><strong>Smartsheet</strong><span>Work management and spreadsheet-style project platform.</span></td>
               <td>Productivity and Project Management</td>
               <td>OAuth2; API access token</td>
-              <td>Self-serve + review/admin gate<span>Self-serve developer account/token; enterprise admins can restrict app access.</span></td>
+              <td>Self-serve<span>Self-serve developer account/token; enterprise admins can restrict app access.</span></td>
               <td>Broad REST API for sheets, rows, reports, workspaces, attachments and webhooks.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Sheet schema and enterprise admin restrictions.</span></td>
               <td><b class="confidence high">High</b><a href="https://developers.smartsheet.com/api/smartsheet/openapi" target="_blank" rel="noopener">proof 1</a> <a href="https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication" target="_blank" rel="noopener">proof 2</a></td>
@@ -2182,7 +2182,7 @@
               <td><strong>Reducto</strong><span>Document parsing and extraction API for PDFs and unstructured documents.</span></td>
               <td>AI, Research and Media-native</td>
               <td>API key / bearer token</td>
-              <td>Self-serve + review/admin gate<span>Self-serve docs and account path are public; usage is paid/trial based.</span></td>
+              <td>Self-serve<span>Self-serve docs and account path are public; usage is paid/trial based.</span></td>
               <td>Documented REST API for parse, extract, split, jobs and structured outputs.<span class="muted">Official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Document privacy, cost and evaluation of extraction accuracy.</span></td>
               <td><b class="confidence high">High</b><a href="https://docs.reducto.ai/v1/introduction" target="_blank" rel="noopener">proof 1</a> <a href="https://docs.reducto.ai/llms.txt" target="_blank" rel="noopener">proof 2</a></td>
@@ -2194,7 +2194,7 @@
               <td><strong>Devin</strong><span>AI software engineering agent platform.</span></td>
               <td>AI, Research and Media-native</td>
               <td>OAuth/MCP session; API token / enterprise credentials</td>
-              <td>Review, paid or admin gate<span>Docs are public; useful API/MCP access depends on Devin account/plan.</span></td>
+              <td>Self-serve<span>Docs are public; useful API/MCP access depends on Devin account/plan.</span></td>
               <td>Public docs include MCP/agent-friendly metadata and platform APIs are emerging.<span class="muted">Official MCP</span></td>
               <td><b class="badge ready-after-gate">Ready after gate</b><span>Account access and still-evolving agent control surface.</span></td>
               <td><b class="confidence medium">Medium</b><a href="https://docs.devin.ai/" target="_blank" rel="noopener">proof 1</a> <a href="https://docs.devin.ai/llms.txt" target="_blank" rel="noopener">proof 2</a></td>
@@ -2230,7 +2230,7 @@
               <td><strong>YouTube Transcript</strong><span>Transcript API service for retrieving YouTube transcripts.</span></td>
               <td>AI, Research and Media-native</td>
               <td>API key / bearer token</td>
-              <td>Self-serve + review/admin gate<span>Self-serve API product; paid/free trial depends on provider plan.</span></td>
+              <td>Self-serve<span>Self-serve API product; paid/free trial depends on provider plan.</span></td>
               <td>Focused REST API for transcript retrieval, languages and formatting.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-today">Ready today</b><span>Third-party dependency and YouTube policy/availability limits.</span></td>
               <td><b class="confidence medium">Medium</b><a href="https://transcriptapi.com/" target="_blank" rel="noopener">proof 1</a> <a href="https://transcriptapi.com/docs" target="_blank" rel="noopener">proof 2</a></td>
@@ -2242,7 +2242,7 @@
               <td><strong>Grain</strong><span>AI meeting recording, transcript, clip and note platform.</span></td>
               <td>AI, Research and Media-native</td>
               <td>Workspace access token; OAuth2</td>
-              <td>Review, paid or admin gate<span>API docs are public; workspace API requires Business plan/admin access for broad workspace data.</span></td>
+              <td>Self-serve<span>API docs are public; workspace API requires Business plan/admin access for broad workspace data.</span></td>
               <td>REST API covers meetings, recordings, notes/highlights and workspace data with OAuth/WAT modes.<span class="muted">No official MCP</span></td>
               <td><b class="badge ready-after-gate">Ready after gate</b><span>Business-plan gate and meeting-data privacy.</span></td>
               <td><b class="confidence high">High</b><a href="https://developers.grain.com/" target="_blank" rel="noopener">proof 1</a> <a href="https://grain.com/release-notes" target="_blank" rel="noopener">proof 2</a></td>

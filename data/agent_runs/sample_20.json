@@ -1,0 +1,779 @@
+{
+  "generated_at": "2026-07-13T07:42:22.641067+00:00",
+  "count": 20,
+  "summary": {
+    "confidence": {
+      "Medium": 8,
+      "High": 8,
+      "Low": 4
+    },
+    "verdict": {
+      "Investigate further": 4,
+      "Ready": 12,
+      "Ready with gate": 2,
+      "Not buildable yet": 2
+    },
+    "critic_flags": {
+      "auth_missing": 13,
+      "access_unclear": 11,
+      "surface_unclear": 6,
+      "low_confidence": 4
+    }
+  },
+  "results": [
+    {
+      "id": 1,
+      "category": "CRM and Sales",
+      "app": "Salesforce",
+      "hint": "salesforce.com",
+      "what_it_does": "Salesforce is a CRM/sales platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "Docs found, but API style/breadth unclear from fetched text.",
+      "mcp": "No MCP signal found in fetched docs.",
+      "verdict": "Investigate further",
+      "blocker": "Docs were reachable, but auth/API indicators were weak.",
+      "confidence": "Medium",
+      "evidence": [
+        "https://developer.salesforce.com/docs/apis",
+        "https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm",
+        "https://salesforce.com/docs"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {},
+      "critic_flags": [
+        "auth_missing",
+        "access_unclear",
+        "surface_unclear"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "CRM and Sales",
+      "app": "HubSpot",
+      "hint": "hubspot.com",
+      "what_it_does": "HubSpot is a CRM/sales platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Self-serve signup/developer path indicated",
+      "surface": "moderate/focused documented surface with REST signals.",
+      "mcp": "Agent/AI-tooling signal found, but MCP not proven.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "Medium",
+      "evidence": [
+        "https://developers.hubspot.com/docs/api/oauth-quickstart",
+        "https://developers.hubspot.com/docs/api"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 2,
+      "evidence_terms": {
+        "Self-serve": [
+          "sign up"
+        ],
+        "REST": [
+          "endpoint",
+          "api reference"
+        ],
+        "Agent": [
+          "llms.txt"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "CRM and Sales",
+      "app": "Pipedrive",
+      "hint": "pipedrive.com",
+      "what_it_does": "Pipedrive is a CRM/sales platform.",
+      "auth_methods": "OAuth2",
+      "access": "Self-serve signup/developer path indicated; paid/customer/partner access gate indicated",
+      "surface": "moderate/focused documented surface with REST, Webhooks signals.",
+      "mcp": "No MCP signal found in fetched docs.",
+      "verdict": "Ready with gate",
+      "blocker": "Buildable after review/admin/plan/compliance gate is cleared.",
+      "confidence": "High",
+      "evidence": [
+        "https://developers.pipedrive.com/docs/api/v1",
+        "https://pipedrive.com/developers",
+        "https://pipedrive.com/api"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "OAuth2": [
+          "oauth 2"
+        ],
+        "Self-serve": [
+          "sign up",
+          "free trial",
+          "create an app",
+          "sandbox"
+        ],
+        "Paid/customer gate": [
+          "contact sales",
+          "account manager"
+        ],
+        "REST": [
+          "endpoint",
+          "api reference"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ]
+      },
+      "critic_flags": []
+    },
+    {
+      "id": 4,
+      "category": "CRM and Sales",
+      "app": "Attio",
+      "hint": "attio.com",
+      "what_it_does": "Attio is a CRM/sales platform.",
+      "auth_methods": "OAuth2",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "broad documented surface with REST, Webhooks, SDK signals.",
+      "mcp": "MCP/server-card signal found in fetched docs.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "High",
+      "evidence": [
+        "https://docs.attio.com/rest-api/overview",
+        "https://attio.com/developers",
+        "https://attio.com/docs"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "OAuth2": [
+          "oauth 2"
+        ],
+        "REST": [
+          "rest api",
+          "endpoint"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ],
+        "SDK": [
+          "sdk"
+        ],
+        "MCP": [
+          "mcp server",
+          "mcp"
+        ],
+        "Agent": [
+          "agent",
+          "llms.txt"
+        ]
+      },
+      "critic_flags": [
+        "access_unclear"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "CRM and Sales",
+      "app": "Twenty",
+      "hint": "twenty.com",
+      "what_it_does": "Twenty is a CRM/sales platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "moderate/focused documented surface with GraphQL, Webhooks signals.",
+      "mcp": "Agent/AI-tooling signal found, but MCP not proven.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "Medium",
+      "evidence": [
+        "https://twenty.com/developers",
+        "https://developers.twenty.com",
+        "https://developer.twenty.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "GraphQL": [
+          "graphql"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ],
+        "Agent": [
+          "agent",
+          "llms.txt"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing",
+        "access_unclear"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "CRM and Sales",
+      "app": "Podio",
+      "hint": "podio.com",
+      "what_it_does": "Podio is a CRM/sales platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "moderate/focused documented surface with REST signals.",
+      "mcp": "No MCP signal found in fetched docs.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "Medium",
+      "evidence": [
+        "https://podio.com/developers",
+        "https://podio.com/api-docs",
+        "https://podio.com/docs/api"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "REST": [
+          "endpoint"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing",
+        "access_unclear"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "CRM and Sales",
+      "app": "Zoho CRM",
+      "hint": "zoho.com/crm",
+      "what_it_does": "Zoho CRM is a CRM/sales platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Self-serve signup/developer path indicated; paid/customer/partner access gate indicated",
+      "surface": "Docs found, but API style/breadth unclear from fetched text.",
+      "mcp": "MCP/server-card signal found in fetched docs.",
+      "verdict": "Investigate further",
+      "blocker": "Docs were reachable, but auth/API indicators were weak.",
+      "confidence": "Medium",
+      "evidence": [
+        "https://zoho.com/docs",
+        "https://zoho.com/developer",
+        "https://developers.zoho.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "Self-serve": [
+          "sign up",
+          "free trial",
+          "developer account"
+        ],
+        "Paid/customer gate": [
+          "contact sales"
+        ],
+        "MCP": [
+          "model context protocol",
+          "mcp"
+        ],
+        "Agent": [
+          "agent"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing",
+        "surface_unclear"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "CRM and Sales",
+      "app": "Close",
+      "hint": "close.com",
+      "what_it_does": "Close is a CRM/sales platform.",
+      "auth_methods": "OAuth2; API key",
+      "access": "Self-serve signup/developer path indicated",
+      "surface": "broad documented surface with REST, Webhooks, Bulk/async signals.",
+      "mcp": "MCP/server-card signal found in fetched docs.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "High",
+      "evidence": [
+        "https://close.com/api",
+        "https://developer.close.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 2,
+      "evidence_terms": {
+        "OAuth2": [
+          "oauth 2"
+        ],
+        "API key": [
+          "api key"
+        ],
+        "Self-serve": [
+          "free trial"
+        ],
+        "REST": [
+          "rest api",
+          "endpoint",
+          "api reference"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ],
+        "Bulk/async": [
+          "bulk"
+        ],
+        "MCP": [
+          "model context protocol",
+          "mcp server",
+          "mcp"
+        ],
+        "Agent": [
+          "agent",
+          "llms.txt"
+        ]
+      },
+      "critic_flags": []
+    },
+    {
+      "id": 9,
+      "category": "CRM and Sales",
+      "app": "Copper",
+      "hint": "copper.com",
+      "what_it_does": "Copper is a CRM/sales platform.",
+      "auth_methods": "OAuth2",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "moderate/focused documented surface with Webhooks, Bulk/async signals.",
+      "mcp": "No MCP signal found in fetched docs.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "High",
+      "evidence": [
+        "https://copper.com/developers",
+        "https://copper.com/api-docs",
+        "https://copper.com/docs"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "OAuth2": [
+          "oauth2"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ],
+        "Bulk/async": [
+          "bulk"
+        ]
+      },
+      "critic_flags": [
+        "access_unclear"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "CRM and Sales",
+      "app": "DealCloud",
+      "hint": "api.docs.dealcloud.com",
+      "what_it_does": "DealCloud is a CRM/sales platform.",
+      "auth_methods": "API key",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "moderate/focused documented surface with REST, SDK signals.",
+      "mcp": "MCP/server-card signal found in fetched docs.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "High",
+      "evidence": [
+        "https://api.docs.dealcloud.com/docs",
+        "https://api.docs.dealcloud.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 2,
+      "evidence_terms": {
+        "API key": [
+          "api key"
+        ],
+        "REST": [
+          "rest api",
+          "endpoint",
+          "api reference"
+        ],
+        "SDK": [
+          "sdk"
+        ],
+        "MCP": [
+          "mcp server",
+          "mcp"
+        ]
+      },
+      "critic_flags": [
+        "access_unclear"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "Support and Helpdesk",
+      "app": "Zendesk",
+      "hint": "zendesk.com",
+      "what_it_does": "Zendesk is a support/helpdesk platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Self-serve signup/developer path indicated",
+      "surface": "broad documented surface with REST, Webhooks, SDK signals.",
+      "mcp": "Agent/AI-tooling signal found, but MCP not proven.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "High",
+      "evidence": [
+        "https://developer.zendesk.com/api-reference",
+        "https://zendesk.com/developers",
+        "https://zendesk.com/api"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "Self-serve": [
+          "developer account"
+        ],
+        "REST": [
+          "endpoint",
+          "api reference"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ],
+        "SDK": [
+          "sdk"
+        ],
+        "Agent": [
+          "agent"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "Support and Helpdesk",
+      "app": "Intercom",
+      "hint": "intercom.com",
+      "what_it_does": "Intercom is a support/helpdesk platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Self-serve signup/developer path indicated",
+      "surface": "moderate/focused documented surface with REST, Webhooks signals.",
+      "mcp": "No MCP signal found in fetched docs.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "High",
+      "evidence": [
+        "https://intercom.com/developers",
+        "https://intercom.com/api",
+        "https://developers.intercom.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "Self-serve": [
+          "sign up"
+        ],
+        "REST": [
+          "api reference"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "Support and Helpdesk",
+      "app": "Freshdesk",
+      "hint": "freshdesk.com",
+      "what_it_does": "Freshdesk is a support/helpdesk platform.",
+      "auth_methods": "API key",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "broad documented surface with REST, SDK, Bulk/async signals.",
+      "mcp": "Agent/AI-tooling signal found, but MCP not proven.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "High",
+      "evidence": [
+        "https://developers.freshdesk.com/api",
+        "https://developers.freshdesk.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 2,
+      "evidence_terms": {
+        "API key": [
+          "api key",
+          "apikey"
+        ],
+        "REST": [
+          "endpoint",
+          "api reference"
+        ],
+        "SDK": [
+          "sdk"
+        ],
+        "Bulk/async": [
+          "bulk",
+          "job"
+        ],
+        "Agent": [
+          "agent"
+        ]
+      },
+      "critic_flags": [
+        "access_unclear"
+      ]
+    },
+    {
+      "id": 14,
+      "category": "Support and Helpdesk",
+      "app": "Front",
+      "hint": "front.com",
+      "what_it_does": "Front is a support/helpdesk platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "Docs found, but API style/breadth unclear from fetched text.",
+      "mcp": "Agent/AI-tooling signal found, but MCP not proven.",
+      "verdict": "Investigate further",
+      "blocker": "Docs were reachable, but auth/API indicators were weak.",
+      "confidence": "Low",
+      "evidence": [
+        "https://front.com/api"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 1,
+      "evidence_terms": {
+        "Agent": [
+          "agent"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing",
+        "access_unclear",
+        "surface_unclear",
+        "low_confidence"
+      ]
+    },
+    {
+      "id": 15,
+      "category": "Support and Helpdesk",
+      "app": "Pylon",
+      "hint": "usepylon.com",
+      "what_it_does": "Pylon is a support/helpdesk platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "No reachable public docs found.",
+      "surface": "No public API surface verified.",
+      "mcp": "No MCP signal found in fetched docs.",
+      "verdict": "Not buildable yet",
+      "blocker": "No reachable public docs were found by the agent.",
+      "confidence": "Low",
+      "evidence": [
+        "https://usepylon.com/developers",
+        "https://usepylon.com/api-docs"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {},
+      "critic_flags": [
+        "auth_missing",
+        "surface_unclear",
+        "low_confidence"
+      ]
+    },
+    {
+      "id": 16,
+      "category": "Support and Helpdesk",
+      "app": "LiveAgent",
+      "hint": "liveagent.com",
+      "what_it_does": "LiveAgent is a support/helpdesk platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "No reachable public docs found.",
+      "surface": "No public API surface verified.",
+      "mcp": "No MCP signal found in fetched docs.",
+      "verdict": "Not buildable yet",
+      "blocker": "No reachable public docs were found by the agent.",
+      "confidence": "Low",
+      "evidence": [
+        "https://liveagent.com/developers",
+        "https://liveagent.com/api-docs"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {},
+      "critic_flags": [
+        "auth_missing",
+        "surface_unclear",
+        "low_confidence"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "Support and Helpdesk",
+      "app": "Plain",
+      "hint": "plain.com",
+      "what_it_does": "Plain is a support/helpdesk platform.",
+      "auth_methods": "API key; Bearer token; No auth/local",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "broad documented surface with GraphQL, Webhooks, SDK signals.",
+      "mcp": "MCP/server-card signal found in fetched docs.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "Medium",
+      "evidence": [
+        "https://plain.com/docs"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 1,
+      "evidence_terms": {
+        "API key": [
+          "api key"
+        ],
+        "Bearer token": [
+          "bearer"
+        ],
+        "No auth/local": [
+          "no authentication"
+        ],
+        "GraphQL": [
+          "graphql"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ],
+        "SDK": [
+          "sdk"
+        ],
+        "MCP": [
+          "mcp server",
+          "mcp"
+        ],
+        "Agent": [
+          "agent",
+          "llms.txt"
+        ]
+      },
+      "critic_flags": [
+        "access_unclear"
+      ]
+    },
+    {
+      "id": 18,
+      "category": "Support and Helpdesk",
+      "app": "Help Scout",
+      "hint": "helpscout.com",
+      "what_it_does": "Help Scout is a support/helpdesk platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "Docs found, but API style/breadth unclear from fetched text.",
+      "mcp": "Agent/AI-tooling signal found, but MCP not proven.",
+      "verdict": "Investigate further",
+      "blocker": "Docs were reachable, but auth/API indicators were weak.",
+      "confidence": "Low",
+      "evidence": [
+        "https://helpscout.com/docs",
+        "https://developer.helpscout.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 2,
+      "evidence_terms": {
+        "Agent": [
+          "agent"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing",
+        "access_unclear",
+        "surface_unclear",
+        "low_confidence"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "Support and Helpdesk",
+      "app": "Gorgias",
+      "hint": "gorgias.com",
+      "what_it_does": "Gorgias is a support/helpdesk platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Self-serve signup/developer path indicated; review, business, developer-token or admin approval gate indicated",
+      "surface": "moderate/focused documented surface with REST signals.",
+      "mcp": "Agent/AI-tooling signal found, but MCP not proven.",
+      "verdict": "Ready with gate",
+      "blocker": "Buildable after review/admin/plan/compliance gate is cleared.",
+      "confidence": "Medium",
+      "evidence": [
+        "https://developers.gorgias.com",
+        "https://developer.gorgias.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 2,
+      "evidence_terms": {
+        "Self-serve": [
+          "sign up"
+        ],
+        "Review/admin gate": [
+          "approval"
+        ],
+        "REST": [
+          "endpoint",
+          "api reference"
+        ],
+        "Agent": [
+          "agent",
+          "llms.txt"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing"
+      ]
+    },
+    {
+      "id": 20,
+      "category": "Support and Helpdesk",
+      "app": "Gladly",
+      "hint": "gladly.com",
+      "what_it_does": "Gladly is a support/helpdesk platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "broad documented surface with REST, Webhooks, SDK signals.",
+      "mcp": "No MCP signal found in fetched docs.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "Medium",
+      "evidence": [
+        "https://developer.gladly.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 1,
+      "evidence_terms": {
+        "REST": [
+          "rest api"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ],
+        "SDK": [
+          "sdk"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing",
+        "access_unclear"
+      ]
+    }
+  ]
+}

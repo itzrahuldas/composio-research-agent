@@ -49,8 +49,14 @@ RUN_DIR = ROOT / "data" / "agent_runs"
 USER_AGENT = "composio-research-agent/2.0 (+https://github.com/itzrahuldas/composio-research-agent)"
 
 DOC_PRIORS = {
-    "Salesforce": ["https://developer.salesforce.com/docs/apis"],
-    "HubSpot": ["https://developers.hubspot.com/docs/api"],
+    "Salesforce": [
+        "https://developer.salesforce.com/docs/apis",
+        "https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm"
+    ],
+    "HubSpot": [
+        "https://developers.hubspot.com/docs/api",
+        "https://developers.hubspot.com/docs/api/oauth-quickstart"
+    ],
     "Pipedrive": ["https://developers.pipedrive.com/docs/api/v1"],
     "Attio": ["https://docs.attio.com/rest-api/overview"],
     "Twenty": ["https://twenty.com/developers"],

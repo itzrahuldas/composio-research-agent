@@ -4,3 +4,4 @@ openai
 composio
 httpx
 beautifulsoup4
+python-dotenv
