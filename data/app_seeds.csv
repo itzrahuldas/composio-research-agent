@@ -1,0 +1,101 @@
+id|category|app|hint
+1|CRM and Sales|Salesforce|salesforce.com
+2|CRM and Sales|HubSpot|hubspot.com
+3|CRM and Sales|Pipedrive|pipedrive.com
+4|CRM and Sales|Attio|attio.com
+5|CRM and Sales|Twenty|twenty.com
+6|CRM and Sales|Podio|podio.com
+7|CRM and Sales|Zoho CRM|zoho.com/crm
+8|CRM and Sales|Close|close.com
+9|CRM and Sales|Copper|copper.com
+10|CRM and Sales|DealCloud|api.docs.dealcloud.com
+11|Support and Helpdesk|Zendesk|zendesk.com
+12|Support and Helpdesk|Intercom|intercom.com
+13|Support and Helpdesk|Freshdesk|freshdesk.com
+14|Support and Helpdesk|Front|front.com
+15|Support and Helpdesk|Pylon|usepylon.com
+16|Support and Helpdesk|LiveAgent|liveagent.com
+17|Support and Helpdesk|Plain|plain.com
+18|Support and Helpdesk|Help Scout|helpscout.com
+19|Support and Helpdesk|Gorgias|gorgias.com
+20|Support and Helpdesk|Gladly|gladly.com
+21|Communications and Messaging|Slack|slack.com
+22|Communications and Messaging|Twilio|twilio.com
+23|Communications and Messaging|Zoho Cliq|zoho.com/cliq
+24|Communications and Messaging|Lark (Larksuite)|open.larksuite.com
+25|Communications and Messaging|Pumble|pumble.com
+26|Communications and Messaging|Discord|discord.com
+27|Communications and Messaging|Telegram|core.telegram.org
+28|Communications and Messaging|WhatsApp Business|developers.facebook.com/docs/whatsapp
+29|Communications and Messaging|Aircall|aircall.io
+30|Communications and Messaging|Vonage|developer.vonage.com
+31|Marketing, Ads, Email and Social|Google Ads|developers.google.com/google-ads
+32|Marketing, Ads, Email and Social|Meta Ads|developers.facebook.com/docs/marketing-apis
+33|Marketing, Ads, Email and Social|LinkedIn Ads|learn.microsoft.com/linkedin/marketing
+34|Marketing, Ads, Email and Social|GoHighLevel|highlevel.stoplight.io
+35|Marketing, Ads, Email and Social|Mailchimp|mailchimp.com/developer
+36|Marketing, Ads, Email and Social|Klaviyo|developers.klaviyo.com
+37|Marketing, Ads, Email and Social|systeme.io|systeme.io
+38|Marketing, Ads, Email and Social|Pinterest|developers.pinterest.com
+39|Marketing, Ads, Email and Social|Threads (Meta)|developers.facebook.com/docs/threads
+40|Marketing, Ads, Email and Social|SendGrid|sendgrid.com
+41|Ecommerce|Shopify|shopify.dev
+42|Ecommerce|WooCommerce|woocommerce.com/document/woocommerce-rest-api
+43|Ecommerce|BigCommerce|developer.bigcommerce.com
+44|Ecommerce|Salesforce Commerce Cloud|developer.salesforce.com/docs/commerce
+45|Ecommerce|Magento (Adobe Commerce)|developer.adobe.com/commerce
+46|Ecommerce|Squarespace|developers.squarespace.com
+47|Ecommerce|Ecwid|api-docs.ecwid.com
+48|Ecommerce|Gumroad|gumroad.com/api
+49|Ecommerce|Amazon Selling Partner|developer-docs.amazon.com/sp-api
+50|Ecommerce|fanbasis|fanbasis.com
+51|Data, SEO and Scraping|DataForSEO|docs.dataforseo.com
+52|Data, SEO and Scraping|SE Ranking|seranking.com/api
+53|Data, SEO and Scraping|Ahrefs|ahrefs.com/api
+54|Data, SEO and Scraping|MrScraper|docs.mrscraper.com
+55|Data, SEO and Scraping|Apify|docs.apify.com
+56|Data, SEO and Scraping|Firecrawl|firecrawl.dev
+57|Data, SEO and Scraping|Bright Data|brightdata.com
+58|Data, SEO and Scraping|Sherlock|github.com/sherlock-project/sherlock
+59|Data, SEO and Scraping|Waterfall.io|waterfall.io
+60|Data, SEO and Scraping|Clay|clay.com
+61|Developer, Infra and Data platforms|GitHub|docs.github.com/rest
+62|Developer, Infra and Data platforms|Vercel|vercel.com/docs/rest-api
+63|Developer, Infra and Data platforms|Netlify|docs.netlify.com/api
+64|Developer, Infra and Data platforms|Cloudflare|developers.cloudflare.com/api
+65|Developer, Infra and Data platforms|Supabase|supabase.com/docs
+66|Developer, Infra and Data platforms|Neo4j|neo4j.com/docs/api
+67|Developer, Infra and Data platforms|Snowflake|docs.snowflake.com
+68|Developer, Infra and Data platforms|MongoDB Atlas|mongodb.com/docs/atlas/api
+69|Developer, Infra and Data platforms|Datadog|docs.datadoghq.com/api
+70|Developer, Infra and Data platforms|Sentry|docs.sentry.io/api
+71|Productivity and Project Management|Notion|developers.notion.com
+72|Productivity and Project Management|Airtable|airtable.com/developers
+73|Productivity and Project Management|Linear|developers.linear.app
+74|Productivity and Project Management|Jira|developer.atlassian.com
+75|Productivity and Project Management|Asana|developers.asana.com
+76|Productivity and Project Management|Monday.com|developer.monday.com
+77|Productivity and Project Management|ClickUp|clickup.com/api
+78|Productivity and Project Management|Coda|coda.io/developers
+79|Productivity and Project Management|Smartsheet|smartsheet.com/developers
+80|Productivity and Project Management|Harvest|help.getharvest.com/api-v2
+81|Finance and Fintech|Stripe|stripe.com/docs/api
+82|Finance and Fintech|Plaid|plaid.com/docs
+83|Finance and Fintech|Binance|binance-docs.github.io
+84|Finance and Fintech|Paygent Connect|paygent NMI powered
+85|Finance and Fintech|iPayX|ipayx.ai/docs
+86|Finance and Fintech|QuickBooks|developer.intuit.com
+87|Finance and Fintech|Xero|developer.xero.com
+88|Finance and Fintech|Brex|developer.brex.com
+89|Finance and Fintech|Ramp|docs.ramp.com
+90|Finance and Fintech|PitchBook|pitchbook.com
+91|AI, Research and Media-native|NotebookLM|cloud.google.com/gemini
+92|AI, Research and Media-native|Otter AI|help.otter.ai
+93|AI, Research and Media-native|Fathom|fathom.video
+94|AI, Research and Media-native|Consensus|consensus.app
+95|AI, Research and Media-native|Reducto|reducto.ai
+96|AI, Research and Media-native|Devin|docs.devin.ai
+97|AI, Research and Media-native|higgsfield|higgsfield.ai/cli
+98|AI, Research and Media-native|Mermaid CLI|github.com/mermaid-js/mermaid-cli
+99|AI, Research and Media-native|YouTube Transcript|transcriptapi.com
+100|AI, Research and Media-native|Grain|grain.com

@@ -1,2 +1,6 @@
-# No third-party runtime dependencies.
-# Python 3.10+ is enough to rebuild the HTML and run evidence checks.
+# Optional but recommended for the live research agent.
+# The agent has stdlib fallbacks, but these make the "AI + tool" path real.
+openai
+composio
+httpx
+beautifulsoup4

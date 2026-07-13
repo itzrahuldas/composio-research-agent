@@ -1,0 +1,234 @@
+{
+  "generated_at": "2026-07-13T12:04:51.864443+00:00",
+  "count": 5,
+  "summary": {
+    "confidence": {
+      "High": 3,
+      "Medium": 2
+    },
+    "verdict": {
+      "Ready": 4,
+      "Ready with gate": 1
+    },
+    "critic_flags": {
+      "auth_missing": 3,
+      "access_unclear": 2
+    }
+  },
+  "results": [
+    {
+      "id": 1,
+      "category": "CRM and Sales",
+      "app": "Salesforce",
+      "hint": "salesforce.com",
+      "what_it_does": "Salesforce is a CRM/sales platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Self-serve signup/developer path indicated",
+      "surface": "moderate/focused documented surface with REST, CLI signals.",
+      "mcp": "MCP/server-card signal found in fetched docs.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "High",
+      "evidence": [
+        "https://developer.salesforce.com/docs/apis",
+        "https://salesforce.com/docs",
+        "https://salesforce.com/developer"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "Self-serve": [
+          "sign up"
+        ],
+        "REST": [
+          "rest api"
+        ],
+        "CLI": [
+          "cli"
+        ],
+        "MCP": [
+          "model context protocol",
+          "mcp server",
+          "mcp"
+        ],
+        "Agent": [
+          "agent"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "CRM and Sales",
+      "app": "HubSpot",
+      "hint": "hubspot.com",
+      "what_it_does": "HubSpot is a CRM/sales platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Self-serve signup/developer path indicated",
+      "surface": "moderate/focused documented surface with REST, Webhooks signals.",
+      "mcp": "Agent/AI-tooling signal found, but MCP not proven.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "Medium",
+      "evidence": [
+        "https://developers.hubspot.com/docs/api",
+        "https://developers.hubspot.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 2,
+      "evidence_terms": {
+        "Self-serve": [
+          "sign up",
+          "developer account"
+        ],
+        "REST": [
+          "endpoint",
+          "api reference"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ],
+        "Agent": [
+          "llms.txt"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "CRM and Sales",
+      "app": "Pipedrive",
+      "hint": "pipedrive.com",
+      "what_it_does": "Pipedrive is a CRM/sales platform.",
+      "auth_methods": "OAuth2",
+      "access": "Self-serve signup/developer path indicated; paid/customer/partner access gate indicated",
+      "surface": "moderate/focused documented surface with REST, Webhooks signals.",
+      "mcp": "No MCP signal found in fetched docs.",
+      "verdict": "Ready with gate",
+      "blocker": "Buildable after review/admin/plan/compliance gate is cleared.",
+      "confidence": "High",
+      "evidence": [
+        "https://developers.pipedrive.com/docs/api/v1",
+        "https://pipedrive.com/developers",
+        "https://pipedrive.com/api"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "OAuth2": [
+          "oauth 2"
+        ],
+        "Self-serve": [
+          "sign up",
+          "free trial",
+          "create an app",
+          "sandbox"
+        ],
+        "Paid/customer gate": [
+          "contact sales",
+          "account manager"
+        ],
+        "REST": [
+          "endpoint",
+          "api reference"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ]
+      },
+      "critic_flags": []
+    },
+    {
+      "id": 4,
+      "category": "CRM and Sales",
+      "app": "Attio",
+      "hint": "attio.com",
+      "what_it_does": "Attio is a CRM/sales platform.",
+      "auth_methods": "OAuth2",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "broad documented surface with REST, Webhooks, SDK signals.",
+      "mcp": "MCP/server-card signal found in fetched docs.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "High",
+      "evidence": [
+        "https://docs.attio.com/rest-api/overview",
+        "https://attio.com/developers",
+        "https://attio.com/docs"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "OAuth2": [
+          "oauth 2"
+        ],
+        "REST": [
+          "rest api",
+          "endpoint"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ],
+        "SDK": [
+          "sdk"
+        ],
+        "MCP": [
+          "mcp server",
+          "mcp"
+        ],
+        "Agent": [
+          "agent",
+          "llms.txt"
+        ]
+      },
+      "critic_flags": [
+        "access_unclear"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "CRM and Sales",
+      "app": "Twenty",
+      "hint": "twenty.com",
+      "what_it_does": "Twenty is a CRM/sales platform.",
+      "auth_methods": "Unknown / not verified",
+      "access": "Access path unclear from fetched docs.",
+      "surface": "moderate/focused documented surface with GraphQL, Webhooks signals.",
+      "mcp": "Agent/AI-tooling signal found, but MCP not proven.",
+      "verdict": "Ready",
+      "blocker": "Public docs and auth/API indicators are present.",
+      "confidence": "Medium",
+      "evidence": [
+        "https://twenty.com/developers",
+        "https://developers.twenty.com",
+        "https://developer.twenty.com"
+      ],
+      "source_mode": "direct+duckduckgo",
+      "pages_fetched": 3,
+      "evidence_terms": {
+        "GraphQL": [
+          "graphql"
+        ],
+        "Webhooks": [
+          "webhook",
+          "webhooks"
+        ],
+        "Agent": [
+          "agent",
+          "llms.txt"
+        ]
+      },
+      "critic_flags": [
+        "auth_missing",
+        "access_unclear"
+      ]
+    }
+  ]
+}

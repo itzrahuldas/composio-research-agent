@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-07-13T12:04:51.874471+00:00",
+  "method": "Deterministic critic flags rows where auth/access/surface/evidence confidence is weak. Human verification then repairs the final CSV.",
+  "flag_counts": {
+    "auth_missing": 3,
+    "access_unclear": 2
+  },
+  "rows": [
+    {
+      "app": "Salesforce",
+      "confidence": "High",
+      "verdict": "Ready",
+      "flags": [
+        "auth_missing"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://developer.salesforce.com/docs/apis",
+        "https://salesforce.com/docs",
+        "https://salesforce.com/developer"
+      ]
+    },
+    {
+      "app": "HubSpot",
+      "confidence": "Medium",
+      "verdict": "Ready",
+      "flags": [
+        "auth_missing"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://developers.hubspot.com/docs/api",
+        "https://developers.hubspot.com"
+      ]
+    },
+    {
+      "app": "Pipedrive",
+      "confidence": "High",
+      "verdict": "Ready with gate",
+      "flags": [],
+      "next_action": "No immediate repair required.",
+      "evidence": [
+        "https://developers.pipedrive.com/docs/api/v1",
+        "https://pipedrive.com/developers",
+        "https://pipedrive.com/api"
+      ]
+    },
+    {
+      "app": "Attio",
+      "confidence": "High",
+      "verdict": "Ready",
+      "flags": [
+        "access_unclear"
+      ],
+      "next_action": "Check signup, marketplace review, pricing or admin docs.",
+      "evidence": [
+        "https://docs.attio.com/rest-api/overview",
+        "https://attio.com/developers",
+        "https://attio.com/docs"
+      ]
+    },
+    {
+      "app": "Twenty",
+      "confidence": "Medium",
+      "verdict": "Ready",
+      "flags": [
+        "auth_missing",
+        "access_unclear"
+      ],
+      "next_action": "Find and verify an auth-specific docs page.",
+      "evidence": [
+        "https://twenty.com/developers",
+        "https://developers.twenty.com",
+        "https://developer.twenty.com"
+      ]
+    }
+  ]
+}

@@ -11,6 +11,9 @@ Source repo: https://github.com/itzrahuldas/composio-research-agent
 ## What This Repo Contains
 
 - `data/apps_research.csv` - final 100-app research matrix with category, auth, access gate, API surface, MCP signal, buildability verdict, confidence and evidence URLs.
+- `data/app_seeds.csv` - the 100-app seed list used by the live research agent.
+- `src/agent.py` - actual web research agent: search/fetch/extract/critic loop with optional OpenAI and Composio hooks.
+- `data/agent_runs/sample_5.json` - real first-pass agent output for a 5-app sample.
 - `data/manual_verification.csv` - human verification sample showing first-pass misses and final repairs.
 - `src/research_agent.py` - dependency-light research artifact generator and evidence URL checker.
 - `data/toolkit_queue.json` - generated Composio-style priority queue for what to build first.
@@ -20,6 +23,21 @@ Source repo: https://github.com/itzrahuldas/composio-research-agent
 
 ```bash
 python3 src/research_agent.py --build
+```
+
+Run the actual research agent on a small sample:
+
+```bash
+python3 src/agent.py --limit 5 --max-pages 3 \
+  --output data/agent_runs/sample_5.json \
+  --csv-output data/agent_runs/sample_5.csv
+```
+
+Optional AI/tool path:
+
+```bash
+OPENAI_API_KEY=... python3 src/agent.py --limit 5 --use-llm
+COMPOSIO_API_KEY=... python3 src/agent.py --limit 5 --use-composio
 ```
 
 Optional evidence smoke check:
@@ -40,7 +58,7 @@ The workflow is a loop:
 4. Critique likely hallucination zones: hidden APIs, partner portals, ads review, fintech compliance and enterprise commerce.
 5. Repair rows with human-verified evidence and record misses in `data/manual_verification.csv`.
 
-The final script is deterministic so a reviewer can reproduce the case-study page quickly. The "agent" work is represented by the structured extraction loop, URL verification loop, and repair log rather than a one-off hand spreadsheet.
+`src/agent.py` is the live first-pass researcher. `src/research_agent.py` renders the repaired, reviewer-facing case study from the verified data layer.
 
 ## Key Findings
 
