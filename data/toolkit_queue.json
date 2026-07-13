@@ -1,0 +1,1298 @@
+[
+  {
+    "id": 1,
+    "app": "Salesforce",
+    "category": "CRM and Sales",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; JWT bearer; session token",
+    "main_blocker": "OAuth scope design, tenant setup, and object model breadth.",
+    "evidence": [
+      "https://developer.salesforce.com/docs/apis",
+      "https://help.salesforce.com/s/articleView?id=platform.remoteaccess_oauth_flows.htm&type=5"
+    ]
+  },
+  {
+    "id": 2,
+    "app": "HubSpot",
+    "category": "CRM and Sales",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; private app access token",
+    "main_blocker": "Map scopes carefully and handle per-portal object customization.",
+    "evidence": [
+      "https://developers.hubspot.com/docs/api",
+      "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication"
+    ]
+  },
+  {
+    "id": 3,
+    "app": "Pipedrive",
+    "category": "CRM and Sales",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; API token",
+    "main_blocker": "Pagination/rate limits and OAuth for multi-tenant public apps.",
+    "evidence": [
+      "https://developers.pipedrive.com/docs/api/v1",
+      "https://pipedrive.readme.io/docs/marketplace-manager"
+    ]
+  },
+  {
+    "id": 4,
+    "app": "Attio",
+    "category": "CRM and Sales",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Bearer API token; OAuth2 for public apps",
+    "main_blocker": "API is young; some advanced workspace admin surfaces are limited.",
+    "evidence": [
+      "https://docs.attio.com/rest-api/overview",
+      "https://docs.attio.com/rest-api/guides/authentication"
+    ]
+  },
+  {
+    "id": 5,
+    "app": "Twenty",
+    "category": "CRM and Sales",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready",
+    "auth_methods": "API key; bearer token; self-hosted auth",
+    "main_blocker": "Version drift between cloud and self-hosted deployments.",
+    "evidence": [
+      "https://twenty.com/developers",
+      "https://github.com/twentyhq/twenty"
+    ]
+  },
+  {
+    "id": 6,
+    "app": "Podio",
+    "category": "CRM and Sales",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; app token flow",
+    "main_blocker": "Older API conventions and workspace-level permissions.",
+    "evidence": [
+      "https://developers.podio.com/",
+      "https://developers.podio.com/authentication"
+    ]
+  },
+  {
+    "id": 7,
+    "app": "Zoho CRM",
+    "category": "CRM and Sales",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2",
+    "main_blocker": "Regional data centers and OAuth scope/module mapping.",
+    "evidence": [
+      "https://www.zoho.com/crm/developer/docs/api/v8/",
+      "https://api-console.zoho.com/"
+    ]
+  },
+  {
+    "id": 8,
+    "app": "Close",
+    "category": "CRM and Sales",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key over Basic auth; OAuth2 for partners",
+    "main_blocker": "Basic auth token handling and activity volume/rate limits.",
+    "evidence": [
+      "https://developer.close.com/",
+      "https://developer.close.com/topics/authentication/"
+    ]
+  },
+  {
+    "id": 9,
+    "app": "Copper",
+    "category": "CRM and Sales",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key plus user email headers",
+    "main_blocker": "Header-based auth is simple but less OAuth-native for delegated agents.",
+    "evidence": [
+      "https://developer.copper.com/",
+      "https://developer.copper.com/introduction/authentication.html"
+    ]
+  },
+  {
+    "id": 10,
+    "app": "DealCloud",
+    "category": "CRM and Sales",
+    "priority": "P3 outreach / park",
+    "verdict": "Outreach needed",
+    "auth_methods": "OAuth2 client credentials / bearer token",
+    "main_blocker": "Enterprise customer access and tenant-specific schema.",
+    "evidence": [
+      "https://api.docs.dealcloud.com/",
+      "https://www.dealcloud.com/"
+    ]
+  },
+  {
+    "id": 11,
+    "app": "Zendesk",
+    "category": "Support and Helpdesk",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; API token; basic auth with token",
+    "main_blocker": "Many products and permission models; must bound tool surface.",
+    "evidence": [
+      "https://developer.zendesk.com/api-reference/",
+      "https://developer.zendesk.com/documentation/api-basics/authentication/creating-and-using-oauth-tokens-with-the-api/"
+    ]
+  },
+  {
+    "id": 12,
+    "app": "Intercom",
+    "category": "Support and Helpdesk",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; access token",
+    "main_blocker": "API versioning and conversation/ticket model differences.",
+    "evidence": [
+      "https://developers.intercom.com/",
+      "https://developers.intercom.com/docs/references/rest-api/api.intercom.io/authentication/"
+    ]
+  },
+  {
+    "id": 13,
+    "app": "Freshdesk",
+    "category": "Support and Helpdesk",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key over Basic auth; OAuth2 for Freshworks apps",
+    "main_blocker": "Product-family split across Freshdesk/Freshservice/Freshsales.",
+    "evidence": [
+      "https://developers.freshdesk.com/api/",
+      "https://developers.freshdesk.com/api/#authentication"
+    ]
+  },
+  {
+    "id": 14,
+    "app": "Front",
+    "category": "Support and Helpdesk",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; API token",
+    "main_blocker": "Channel permissions and irreversible send/reply actions need guardrails.",
+    "evidence": [
+      "https://dev.frontapp.com/",
+      "https://dev.frontapp.com/reference/authentication"
+    ]
+  },
+  {
+    "id": 15,
+    "app": "Pylon",
+    "category": "Support and Helpdesk",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with access",
+    "auth_methods": "API key / bearer token",
+    "main_blocker": "Commercial access to workspace/API key is the main gate.",
+    "evidence": [
+      "https://docs.usepylon.com/pylon-docs/",
+      "https://usepylon.com/"
+    ]
+  },
+  {
+    "id": 16,
+    "app": "LiveAgent",
+    "category": "Support and Helpdesk",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key",
+    "main_blocker": "Older helpdesk API patterns and product-specific endpoint naming.",
+    "evidence": [
+      "https://support.liveagent.com/840770-Complete-API-reference",
+      "https://support.liveagent.com/802463-REST-API"
+    ]
+  },
+  {
+    "id": 17,
+    "app": "Plain",
+    "category": "Support and Helpdesk",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Bearer API key",
+    "main_blocker": "GraphQL schema needs careful tool chunking for agent UX.",
+    "evidence": [
+      "https://www.plain.com/docs/api-reference",
+      "https://www.plain.com/docs/graphql/authentication"
+    ]
+  },
+  {
+    "id": 18,
+    "app": "Help Scout",
+    "category": "Support and Helpdesk",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; app access tokens",
+    "main_blocker": "Mailbox access and OAuth refresh handling.",
+    "evidence": [
+      "https://developer.helpscout.com/",
+      "https://developer.helpscout.com/mailbox-api/overview/authentication/"
+    ]
+  },
+  {
+    "id": 19,
+    "app": "Gorgias",
+    "category": "Support and Helpdesk",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Basic auth; API key/password; OAuth2 for apps",
+    "main_blocker": "Ecommerce-specific permissions and ticket action safety.",
+    "evidence": [
+      "https://developers.gorgias.com/",
+      "https://developers.gorgias.com/reference/authentication"
+    ]
+  },
+  {
+    "id": 20,
+    "app": "Gladly",
+    "category": "Support and Helpdesk",
+    "priority": "P3 outreach / park",
+    "verdict": "Outreach needed",
+    "auth_methods": "OAuth2; bearer token",
+    "main_blocker": "Enterprise sales/customer gate and irreversible customer messaging actions.",
+    "evidence": [
+      "https://developer.gladly.com/",
+      "https://www.gladly.com/"
+    ]
+  },
+  {
+    "id": 21,
+    "app": "Slack",
+    "category": "Communications and Messaging",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; bot/user tokens; app-level tokens",
+    "main_blocker": "Workspace install approval and high-risk message/posting scopes.",
+    "evidence": [
+      "https://api.slack.com/apis",
+      "https://api.slack.com/authentication"
+    ]
+  },
+  {
+    "id": 22,
+    "app": "Twilio",
+    "category": "Communications and Messaging",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Account SID/Auth Token; API key/secret; OAuth2 in selected products",
+    "main_blocker": "Messaging compliance, phone number registration and channel-specific rules.",
+    "evidence": [
+      "https://www.twilio.com/docs/usage/api",
+      "https://www.twilio.com/docs/iam/api-key"
+    ]
+  },
+  {
+    "id": 23,
+    "app": "Zoho Cliq",
+    "category": "Communications and Messaging",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2",
+    "main_blocker": "Zoho data center/scopes and bot install flow.",
+    "evidence": [
+      "https://www.zoho.com/cliq/help/restapi/v2/",
+      "https://api-console.zoho.com/"
+    ]
+  },
+  {
+    "id": 24,
+    "app": "Lark (Larksuite)",
+    "category": "Communications and Messaging",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; app access token; tenant access token",
+    "main_blocker": "Tenant/app token model and enterprise app approval.",
+    "evidence": [
+      "https://open.larksuite.com/document/home/index",
+      "https://open.larksuite.com/document/server-docs/api-call-guide/calling-process"
+    ]
+  },
+  {
+    "id": 25,
+    "app": "Pumble",
+    "category": "Communications and Messaging",
+    "priority": "P3 outreach / park",
+    "verdict": "Not buildable yet",
+    "auth_methods": "Unknown / no verified public API auth",
+    "main_blocker": "Public API docs/auth could not be verified; needs vendor confirmation.",
+    "evidence": [
+      "https://pumble.com/help/",
+      "https://pumble.com/integrations/"
+    ]
+  },
+  {
+    "id": 26,
+    "app": "Discord",
+    "category": "Communications and Messaging",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; bot token",
+    "main_blocker": "Privileged intents, bot safety and rate limits.",
+    "evidence": [
+      "https://discord.com/developers/docs/intro",
+      "https://discord.com/developers/docs/topics/oauth2"
+    ]
+  },
+  {
+    "id": 27,
+    "app": "Telegram",
+    "category": "Communications and Messaging",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Bot token; MTProto auth keys",
+    "main_blocker": "Bot-only scope limits unless building MTProto client tooling.",
+    "evidence": [
+      "https://core.telegram.org/bots/api",
+      "https://core.telegram.org/api"
+    ]
+  },
+  {
+    "id": 28,
+    "app": "WhatsApp Business",
+    "category": "Communications and Messaging",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with compliance",
+    "auth_methods": "OAuth2 access token; system user token",
+    "main_blocker": "Business verification, template approval and messaging policy compliance.",
+    "evidence": [
+      "https://developers.facebook.com/docs/whatsapp",
+      "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started"
+    ]
+  },
+  {
+    "id": 29,
+    "app": "Aircall",
+    "category": "Communications and Messaging",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Basic auth/API ID and token; OAuth2 for public apps",
+    "main_blocker": "Telephony actions and call recording data require careful permissioning.",
+    "evidence": [
+      "https://developer.aircall.io/api-references/",
+      "https://developer.aircall.io/api-references/#authentication"
+    ]
+  },
+  {
+    "id": 30,
+    "app": "Vonage",
+    "category": "Communications and Messaging",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key/secret; JWT; OAuth2 for some APIs",
+    "main_blocker": "Channel compliance and mixed auth models by product.",
+    "evidence": [
+      "https://developer.vonage.com/en/api",
+      "https://developer.vonage.com/en/getting-started/concepts/authentication"
+    ]
+  },
+  {
+    "id": 31,
+    "app": "Google Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with review",
+    "auth_methods": "OAuth2; developer token",
+    "main_blocker": "Developer token approval and Ads account compliance.",
+    "evidence": [
+      "https://developers.google.com/google-ads/api/docs/start",
+      "https://developers.google.com/google-ads/api/docs/access-levels"
+    ]
+  },
+  {
+    "id": 32,
+    "app": "Meta Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with review",
+    "auth_methods": "OAuth2 access tokens; system user tokens",
+    "main_blocker": "App review, business verification and dangerous write scopes.",
+    "evidence": [
+      "https://developers.facebook.com/docs/marketing-apis",
+      "https://developers.facebook.com/docs/marketing-api/overview"
+    ]
+  },
+  {
+    "id": 33,
+    "app": "LinkedIn Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "priority": "P3 outreach / park",
+    "verdict": "Outreach/review needed",
+    "auth_methods": "OAuth2",
+    "main_blocker": "LinkedIn product access approval is the main blocker.",
+    "evidence": [
+      "https://learn.microsoft.com/en-us/linkedin/marketing/",
+      "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication"
+    ]
+  },
+  {
+    "id": 34,
+    "app": "GoHighLevel",
+    "category": "Marketing, Ads, Email and Social",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; location access token; API key in legacy flows",
+    "main_blocker": "Agency/location token model and version migration from legacy APIs.",
+    "evidence": [
+      "https://highlevel.stoplight.io/docs/integrations/",
+      "https://highlevel.stoplight.io/docs/integrations/ZG9jOjI2MzUzOTE4-oauth-2-0"
+    ]
+  },
+  {
+    "id": 35,
+    "app": "Mailchimp",
+    "category": "Marketing, Ads, Email and Social",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key; OAuth2",
+    "main_blocker": "Data center-specific API host and audience schema quirks.",
+    "evidence": [
+      "https://mailchimp.com/developer/marketing/api/",
+      "https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/"
+    ]
+  },
+  {
+    "id": 36,
+    "app": "Klaviyo",
+    "category": "Marketing, Ads, Email and Social",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Private API key; OAuth2 for apps",
+    "main_blocker": "Metric/event volume and consent-sensitive email/SMS actions.",
+    "evidence": [
+      "https://developers.klaviyo.com/en/docs",
+      "https://developers.klaviyo.com/en/docs/authenticate_"
+    ]
+  },
+  {
+    "id": 37,
+    "app": "systeme.io",
+    "category": "Marketing, Ads, Email and Social",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready",
+    "auth_methods": "Public API key / bearer token",
+    "main_blocker": "Surface is narrower than HubSpot/Klaviyo and docs are still maturing.",
+    "evidence": [
+      "https://developer.systeme.io/reference/api",
+      "https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io"
+    ]
+  },
+  {
+    "id": 38,
+    "app": "Pinterest",
+    "category": "Marketing, Ads, Email and Social",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with review",
+    "auth_methods": "OAuth2",
+    "main_blocker": "Ads/business permissions and rate limits.",
+    "evidence": [
+      "https://developers.pinterest.com/docs/api/v5/",
+      "https://developers.pinterest.com/docs/getting-started/authentication/"
+    ]
+  },
+  {
+    "id": 39,
+    "app": "Threads (Meta)",
+    "category": "Marketing, Ads, Email and Social",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with review",
+    "auth_methods": "OAuth2 access tokens",
+    "main_blocker": "Meta app review and narrower API surface.",
+    "evidence": [
+      "https://developers.facebook.com/docs/threads",
+      "https://developers.facebook.com/docs/threads/get-started"
+    ]
+  },
+  {
+    "id": 40,
+    "app": "SendGrid",
+    "category": "Marketing, Ads, Email and Social",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key",
+    "main_blocker": "Email deliverability, sender verification and suppression safety.",
+    "evidence": [
+      "https://www.twilio.com/docs/sendgrid/api-reference",
+      "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/api-getting-started"
+    ]
+  },
+  {
+    "id": 41,
+    "app": "Shopify",
+    "category": "Ecommerce",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; Admin API access tokens",
+    "main_blocker": "OAuth scopes, shop installation flow and safe write actions.",
+    "evidence": [
+      "https://shopify.dev/docs/api",
+      "https://shopify.dev/docs/apps/build/ai-toolkit"
+    ]
+  },
+  {
+    "id": 42,
+    "app": "WooCommerce",
+    "category": "Ecommerce",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Consumer key/secret; Basic auth over HTTPS; OAuth1 legacy",
+    "main_blocker": "Self-hosted variation, plugin conflicts and per-store permissions.",
+    "evidence": [
+      "https://woocommerce.com/document/woocommerce-rest-api/",
+      "https://woocommerce.github.io/woocommerce-rest-api-docs/"
+    ]
+  },
+  {
+    "id": 43,
+    "app": "BigCommerce",
+    "category": "Ecommerce",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; store API access tokens",
+    "main_blocker": "Store hash/token model and marketplace review for public apps.",
+    "evidence": [
+      "https://developer.bigcommerce.com/docs/rest-management",
+      "https://developer.bigcommerce.com/docs/start/authentication"
+    ]
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "category": "Ecommerce",
+    "priority": "P3 outreach / park",
+    "verdict": "Outreach needed",
+    "auth_methods": "OAuth2; SLAS tokens; Account Manager credentials",
+    "main_blocker": "Customer/partner sandbox access and complex Salesforce commerce identity.",
+    "evidence": [
+      "https://developer.salesforce.com/docs/commerce",
+      "https://developer.salesforce.com/docs/commerce/commerce-api"
+    ]
+  },
+  {
+    "id": 45,
+    "app": "Magento (Adobe Commerce)",
+    "category": "Ecommerce",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Bearer integration token; OAuth1; admin/customer tokens",
+    "main_blocker": "Deployment/version differences and admin token safety.",
+    "evidence": [
+      "https://developer.adobe.com/commerce/webapi/rest/",
+      "https://developer.adobe.com/commerce/webapi/get-started/authentication/"
+    ]
+  },
+  {
+    "id": 46,
+    "app": "Squarespace",
+    "category": "Ecommerce",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with plan",
+    "auth_methods": "OAuth2; API key for selected APIs",
+    "main_blocker": "Plan eligibility and narrower surface than Shopify/BigCommerce.",
+    "evidence": [
+      "https://developers.squarespace.com/",
+      "https://developers.squarespace.com/commerce-apis"
+    ]
+  },
+  {
+    "id": 47,
+    "app": "Ecwid",
+    "category": "Ecommerce",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; secret access token",
+    "main_blocker": "Store-scoped OAuth and app marketplace review for distribution.",
+    "evidence": [
+      "https://api-docs.ecwid.com/reference",
+      "https://api-docs.ecwid.com/reference/authentication"
+    ]
+  },
+  {
+    "id": 48,
+    "app": "Gumroad",
+    "category": "Ecommerce",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; access token",
+    "main_blocker": "Limited endpoint breadth and creator-account context.",
+    "evidence": [
+      "https://gumroad.com/api",
+      "https://gumroad.com/api#authentication"
+    ]
+  },
+  {
+    "id": 49,
+    "app": "Amazon Selling Partner",
+    "category": "Ecommerce",
+    "priority": "P3 outreach / park",
+    "verdict": "Outreach/review needed",
+    "auth_methods": "Login with Amazon OAuth2; AWS SigV4 IAM",
+    "main_blocker": "Developer profile approval, AWS signing, restricted data tokens and compliance.",
+    "evidence": [
+      "https://developer-docs.amazon.com/sp-api/",
+      "https://developer-docs.amazon.com/sp-api/docs/registering-your-application"
+    ]
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "category": "Ecommerce",
+    "priority": "P3 outreach / park",
+    "verdict": "Not buildable yet",
+    "auth_methods": "Unknown / no verified public API auth",
+    "main_blocker": "Vendor confirmation or partner documentation needed.",
+    "evidence": [
+      "https://www.fanbasis.com/"
+    ]
+  },
+  {
+    "id": 51,
+    "app": "DataForSEO",
+    "category": "Data, SEO and Scraping",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Basic auth with API login/password",
+    "main_blocker": "Cost control and task polling/async workflows.",
+    "evidence": [
+      "https://docs.dataforseo.com/v3/",
+      "https://dataforseo.com/apis"
+    ]
+  },
+  {
+    "id": 52,
+    "app": "SE Ranking",
+    "category": "Data, SEO and Scraping",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with plan",
+    "auth_methods": "API key / token",
+    "main_blocker": "Paid-plan/API quota gate.",
+    "evidence": [
+      "https://seranking.com/api/",
+      "https://seranking.com/api.html"
+    ]
+  },
+  {
+    "id": 53,
+    "app": "Ahrefs",
+    "category": "Data, SEO and Scraping",
+    "priority": "P3 outreach / park",
+    "verdict": "Outreach/paid needed",
+    "auth_methods": "API token",
+    "main_blocker": "High cost/API subscription gate.",
+    "evidence": [
+      "https://ahrefs.com/api",
+      "https://docs.ahrefs.com/"
+    ]
+  },
+  {
+    "id": 54,
+    "app": "MrScraper",
+    "category": "Data, SEO and Scraping",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready",
+    "auth_methods": "API key",
+    "main_blocker": "Anti-bot reliability, legal use controls and target-site variance.",
+    "evidence": [
+      "https://docs.mrscraper.com/",
+      "https://mrscraper.com/"
+    ]
+  },
+  {
+    "id": 55,
+    "app": "Apify",
+    "category": "Data, SEO and Scraping",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API token",
+    "main_blocker": "Selecting safe actor tools and controlling run cost.",
+    "evidence": [
+      "https://docs.apify.com/api/v2",
+      "https://docs.apify.com/platform/integrations/mcp"
+    ]
+  },
+  {
+    "id": 56,
+    "app": "Firecrawl",
+    "category": "Data, SEO and Scraping",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key",
+    "main_blocker": "Credit use and website crawl legality/robots concerns.",
+    "evidence": [
+      "https://docs.firecrawl.dev/",
+      "https://docs.firecrawl.dev/integrations/mcp"
+    ]
+  },
+  {
+    "id": 57,
+    "app": "Bright Data",
+    "category": "Data, SEO and Scraping",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with compliance",
+    "auth_methods": "API token; username/password zone credentials",
+    "main_blocker": "Compliance/KYC, cost and target-use restrictions.",
+    "evidence": [
+      "https://docs.brightdata.com/",
+      "https://brightdata.com/"
+    ]
+  },
+  {
+    "id": 58,
+    "app": "Sherlock",
+    "category": "Data, SEO and Scraping",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "No hosted auth; local CLI inputs",
+    "main_blocker": "It is a CLI, not SaaS; must package as local skill/tool with rate limiting.",
+    "evidence": [
+      "https://github.com/sherlock-project/sherlock"
+    ]
+  },
+  {
+    "id": 59,
+    "app": "Waterfall.io",
+    "category": "Data, SEO and Scraping",
+    "priority": "P3 outreach / park",
+    "verdict": "Outreach needed",
+    "auth_methods": "Unknown / partner-issued credentials likely",
+    "main_blocker": "Public docs/auth not discoverable; likely vendor partnership needed.",
+    "evidence": [
+      "https://www.waterfall.io/"
+    ]
+  },
+  {
+    "id": 60,
+    "app": "Clay",
+    "category": "Data, SEO and Scraping",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with plan",
+    "auth_methods": "API key; webhooks; workspace tokens",
+    "main_blocker": "Credit costs, workspace permissions and still-evolving API docs.",
+    "evidence": [
+      "https://docs.clay.com/",
+      "https://www.clay.com/"
+    ]
+  },
+  {
+    "id": 61,
+    "app": "GitHub",
+    "category": "Developer, Infra and Data platforms",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; GitHub App; fine-grained PAT",
+    "main_blocker": "Permission scopes and organization app approval.",
+    "evidence": [
+      "https://docs.github.com/en/rest",
+      "https://github.com/github/github-mcp-server"
+    ]
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "category": "Developer, Infra and Data platforms",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Bearer token; OAuth2 for integrations",
+    "main_blocker": "Deployment mutations need confirmation and team-scoped permissions.",
+    "evidence": [
+      "https://vercel.com/docs/rest-api",
+      "https://vercel.com/docs/agent-resources/vercel-mcp"
+    ]
+  },
+  {
+    "id": 63,
+    "app": "Netlify",
+    "category": "Developer, Infra and Data platforms",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; personal access token",
+    "main_blocker": "Deployment and DNS mutations need strong guardrails.",
+    "evidence": [
+      "https://docs.netlify.com/api/get-started/",
+      "https://open-api.netlify.com/"
+    ]
+  },
+  {
+    "id": 64,
+    "app": "Cloudflare",
+    "category": "Developer, Infra and Data platforms",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API token; API key; OAuth for managed MCP",
+    "main_blocker": "Huge tool surface and high-impact write actions.",
+    "evidence": [
+      "https://developers.cloudflare.com/api/",
+      "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/"
+    ]
+  },
+  {
+    "id": 65,
+    "app": "Supabase",
+    "category": "Developer, Infra and Data platforms",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Project API keys/JWT; personal access token; OAuth2 for management/MCP",
+    "main_blocker": "Database safety, row-level security and project-scoped credentials.",
+    "evidence": [
+      "https://supabase.com/docs/reference/api",
+      "https://supabase.com/docs/guides/ai-tools/mcp"
+    ]
+  },
+  {
+    "id": 66,
+    "app": "Neo4j",
+    "category": "Developer, Infra and Data platforms",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Basic auth for DB; OAuth2/client credentials for Aura APIs",
+    "main_blocker": "DB credentials vs cloud-management APIs; query safety.",
+    "evidence": [
+      "https://neo4j.com/docs/",
+      "https://neo4j.com/docs/aura/platform/api/"
+    ]
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "category": "Developer, Infra and Data platforms",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with admin",
+    "auth_methods": "Key-pair JWT; OAuth; username/password; PAT/session tokens",
+    "main_blocker": "Account provisioning, network policies and sensitive data controls.",
+    "evidence": [
+      "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+      "https://docs.snowflake.com/en/user-guide/key-pair-auth"
+    ]
+  },
+  {
+    "id": 68,
+    "app": "MongoDB Atlas",
+    "category": "Developer, Infra and Data platforms",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API keys with digest; OAuth2 service accounts; database username/password",
+    "main_blocker": "Project/org permissions and data-access safety.",
+    "evidence": [
+      "https://www.mongodb.com/docs/atlas/api/",
+      "https://www.mongodb.com/docs/atlas/api/authentication/"
+    ]
+  },
+  {
+    "id": 69,
+    "app": "Datadog",
+    "category": "Developer, Infra and Data platforms",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key plus application key",
+    "main_blocker": "High-impact alert/monitor edits and site-region handling.",
+    "evidence": [
+      "https://docs.datadoghq.com/api/latest/",
+      "https://docs.datadoghq.com/account_management/api-app-keys/"
+    ]
+  },
+  {
+    "id": 70,
+    "app": "Sentry",
+    "category": "Developer, Infra and Data platforms",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Auth token; OAuth2",
+    "main_blocker": "Issue mutation safety and org/project token scoping.",
+    "evidence": [
+      "https://docs.sentry.io/api/",
+      "https://docs.sentry.io/product/integrations/integration-platform/"
+    ]
+  },
+  {
+    "id": 71,
+    "app": "Notion",
+    "category": "Productivity and Project Management",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; internal integration token",
+    "main_blocker": "Workspace sharing model and nested block traversal.",
+    "evidence": [
+      "https://developers.notion.com/",
+      "https://developers.notion.com/docs/authorization"
+    ]
+  },
+  {
+    "id": 72,
+    "app": "Airtable",
+    "category": "Productivity and Project Management",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; personal access token",
+    "main_blocker": "Base-specific schema discovery and rate limits.",
+    "evidence": [
+      "https://airtable.com/developers/web/api/introduction",
+      "https://airtable.com/developers/web/guides/personal-access-tokens"
+    ]
+  },
+  {
+    "id": 73,
+    "app": "Linear",
+    "category": "Productivity and Project Management",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; personal API key",
+    "main_blocker": "GraphQL tool design and workspace install permissions.",
+    "evidence": [
+      "https://developers.linear.app/docs/graphql/working-with-the-graphql-api",
+      "https://linear.app/docs/mcp"
+    ]
+  },
+  {
+    "id": 74,
+    "app": "Jira",
+    "category": "Productivity and Project Management",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; API token with Basic auth; Forge app auth",
+    "main_blocker": "Complex permissions, Jira Cloud vs Data Center differences and write safety.",
+    "evidence": [
+      "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+      "https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/"
+    ]
+  },
+  {
+    "id": 75,
+    "app": "Asana",
+    "category": "Productivity and Project Management",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; personal access token",
+    "main_blocker": "Workspace/project permissions and task mutation safety.",
+    "evidence": [
+      "https://developers.asana.com/docs",
+      "https://developers.asana.com/docs/authentication"
+    ]
+  },
+  {
+    "id": 76,
+    "app": "Monday.com",
+    "category": "Productivity and Project Management",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API token; OAuth2",
+    "main_blocker": "GraphQL complexity/rate limits and board schema discovery.",
+    "evidence": [
+      "https://developer.monday.com/api-reference/docs",
+      "https://developer.monday.com/api-reference/docs/authentication"
+    ]
+  },
+  {
+    "id": 77,
+    "app": "ClickUp",
+    "category": "Productivity and Project Management",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; personal API token",
+    "main_blocker": "Hierarchy mapping and write safety for task/status changes.",
+    "evidence": [
+      "https://clickup.com/api",
+      "https://clickup.com/api/developer-portal/authentication/"
+    ]
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "category": "Productivity and Project Management",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API token; OAuth2",
+    "main_blocker": "Doc-scoped permissions and formula/table model translation.",
+    "evidence": [
+      "https://coda.io/developers/apis/v1",
+      "https://coda.io/developers/apis/v1#section/Authentication"
+    ]
+  },
+  {
+    "id": 79,
+    "app": "Smartsheet",
+    "category": "Productivity and Project Management",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; API access token",
+    "main_blocker": "Sheet schema and enterprise admin restrictions.",
+    "evidence": [
+      "https://developers.smartsheet.com/api/smartsheet/openapi",
+      "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication"
+    ]
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "category": "Productivity and Project Management",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2; personal access token",
+    "main_blocker": "Account-scoped access and invoice/payment action safety.",
+    "evidence": [
+      "https://help.getharvest.com/api-v2/",
+      "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/"
+    ]
+  },
+  {
+    "id": 81,
+    "app": "Stripe",
+    "category": "Finance and Fintech",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "Secret API key; restricted key; OAuth2 for Connect",
+    "main_blocker": "Money movement and PII require strict confirmation and scoped keys.",
+    "evidence": [
+      "https://docs.stripe.com/api",
+      "https://docs.stripe.com/keys"
+    ]
+  },
+  {
+    "id": 82,
+    "app": "Plaid",
+    "category": "Finance and Fintech",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with review",
+    "auth_methods": "Client ID/secret; link token; OAuth flows with institutions",
+    "main_blocker": "Production approval, consent, compliance and institution-specific behavior.",
+    "evidence": [
+      "https://plaid.com/docs/api/",
+      "https://plaid.com/docs/link/"
+    ]
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "category": "Finance and Fintech",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with risk controls",
+    "auth_methods": "API key/secret with HMAC signature; OAuth for selected broker flows",
+    "main_blocker": "Trading/money movement risk, regional restrictions and HMAC signing.",
+    "evidence": [
+      "https://developers.binance.com/docs",
+      "https://developers.binance.com/docs/binance-spot-api-docs/rest-api"
+    ]
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "category": "Finance and Fintech",
+    "priority": "P3 outreach / park",
+    "verdict": "Outreach needed",
+    "auth_methods": "Gateway credentials / security key likely; exact public auth not verified",
+    "main_blocker": "Vendor docs and sandbox credentials require partner/customer access.",
+    "evidence": [
+      "https://docs.nmi.com/",
+      "https://www.paygent.co.jp/"
+    ]
+  },
+  {
+    "id": 85,
+    "app": "iPayX",
+    "category": "Finance and Fintech",
+    "priority": "P2 investigate",
+    "verdict": "Investigate further",
+    "auth_methods": "API key / bearer token likely",
+    "main_blocker": "Docs are public but auth/access details need account validation.",
+    "evidence": [
+      "https://www.ipayx.ai/docs"
+    ]
+  },
+  {
+    "id": 86,
+    "app": "QuickBooks",
+    "category": "Finance and Fintech",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with review",
+    "auth_methods": "OAuth2",
+    "main_blocker": "OAuth app review, accounting data sensitivity and minor-versioning.",
+    "evidence": [
+      "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/account",
+      "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization"
+    ]
+  },
+  {
+    "id": 87,
+    "app": "Xero",
+    "category": "Finance and Fintech",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "OAuth2",
+    "main_blocker": "OAuth tenants, accounting safety and regional payroll differences.",
+    "evidence": [
+      "https://developer.xero.com/documentation/api/accounting/overview",
+      "https://developer.xero.com/documentation/guides/oauth2/overview/"
+    ]
+  },
+  {
+    "id": 88,
+    "app": "Brex",
+    "category": "Finance and Fintech",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with customer",
+    "auth_methods": "OAuth2; API tokens / client credentials for apps",
+    "main_blocker": "Customer/admin access and financial controls.",
+    "evidence": [
+      "https://developer.brex.com/",
+      "https://developer.brex.com/openapi/authentication/"
+    ]
+  },
+  {
+    "id": 89,
+    "app": "Ramp",
+    "category": "Finance and Fintech",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with customer",
+    "auth_methods": "OAuth2; client credentials / bearer token",
+    "main_blocker": "Customer access, app approval and financial write safety.",
+    "evidence": [
+      "https://docs.ramp.com/",
+      "https://docs.ramp.com/developer-api/v1/overview"
+    ]
+  },
+  {
+    "id": 90,
+    "app": "PitchBook",
+    "category": "Finance and Fintech",
+    "priority": "P3 outreach / park",
+    "verdict": "Outreach needed",
+    "auth_methods": "Partner/API credentials not public",
+    "main_blocker": "Commercial data licensing and non-public developer docs.",
+    "evidence": [
+      "https://pitchbook.com/products/api",
+      "https://pitchbook.com/"
+    ]
+  },
+  {
+    "id": 91,
+    "app": "NotebookLM",
+    "category": "AI, Research and Media-native",
+    "priority": "P3 outreach / park",
+    "verdict": "Not buildable directly",
+    "auth_methods": "No public NotebookLM API; Gemini APIs use API key/OAuth separately",
+    "main_blocker": "Product lacks public API; use Gemini Enterprise/Workspace APIs as adjacent path.",
+    "evidence": [
+      "https://cloud.google.com/gemini/docs",
+      "https://support.google.com/notebooklm/"
+    ]
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "category": "AI, Research and Media-native",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with account",
+    "auth_methods": "MCP OAuth/session auth; admin APIs/webhooks for workspace customers",
+    "main_blocker": "Workspace/admin access and limited public REST surface.",
+    "evidence": [
+      "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+      "https://help.otter.ai/hc/en-us/articles/35634832371735-Workspace-Webhooks"
+    ]
+  },
+  {
+    "id": 93,
+    "app": "Fathom",
+    "category": "AI, Research and Media-native",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key bearer token; OAuth2 for public apps",
+    "main_blocker": "User-scoped meeting access and transcript privacy.",
+    "evidence": [
+      "https://developers.fathom.ai/",
+      "https://help.fathom.video/en/articles/8368641"
+    ]
+  },
+  {
+    "id": 94,
+    "app": "Consensus",
+    "category": "AI, Research and Media-native",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with plan",
+    "auth_methods": "API key / bearer token; OAuth requested for some integrations",
+    "main_blocker": "API commercial terms and rate limits.",
+    "evidence": [
+      "https://docs.consensus.app/reference",
+      "https://docs.consensus.app/docs/mcp"
+    ]
+  },
+  {
+    "id": 95,
+    "app": "Reducto",
+    "category": "AI, Research and Media-native",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "API key / bearer token",
+    "main_blocker": "Document privacy, cost and evaluation of extraction accuracy.",
+    "evidence": [
+      "https://docs.reducto.ai/v1/introduction",
+      "https://docs.reducto.ai/llms.txt"
+    ]
+  },
+  {
+    "id": 96,
+    "app": "Devin",
+    "category": "AI, Research and Media-native",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with account",
+    "auth_methods": "OAuth/MCP session; API token / enterprise credentials",
+    "main_blocker": "Account access and still-evolving agent control surface.",
+    "evidence": [
+      "https://docs.devin.ai/",
+      "https://docs.devin.ai/llms.txt"
+    ]
+  },
+  {
+    "id": 97,
+    "app": "higgsfield",
+    "category": "AI, Research and Media-native",
+    "priority": "P2 investigate",
+    "verdict": "Investigate further",
+    "auth_methods": "CLI login/session; API auth not clearly public",
+    "main_blocker": "Need vendor docs for API auth, quotas and allowed automation.",
+    "evidence": [
+      "https://higgsfield.ai/cli",
+      "https://higgsfield.ai/"
+    ]
+  },
+  {
+    "id": 98,
+    "app": "Mermaid CLI",
+    "category": "AI, Research and Media-native",
+    "priority": "P0 easy win",
+    "verdict": "Ready",
+    "auth_methods": "No auth; local CLI",
+    "main_blocker": "Sandboxing file IO and rendering untrusted diagrams safely.",
+    "evidence": [
+      "https://github.com/mermaid-js/mermaid-cli",
+      "https://mermaid.js.org/"
+    ]
+  },
+  {
+    "id": 99,
+    "app": "YouTube Transcript",
+    "category": "AI, Research and Media-native",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready",
+    "auth_methods": "API key / bearer token",
+    "main_blocker": "Third-party dependency and YouTube policy/availability limits.",
+    "evidence": [
+      "https://transcriptapi.com/",
+      "https://transcriptapi.com/docs"
+    ]
+  },
+  {
+    "id": 100,
+    "app": "Grain",
+    "category": "AI, Research and Media-native",
+    "priority": "P1 build after credential check",
+    "verdict": "Ready with plan",
+    "auth_methods": "Workspace access token; OAuth2",
+    "main_blocker": "Business-plan gate and meeting-data privacy.",
+    "evidence": [
+      "https://developers.grain.com/",
+      "https://grain.com/release-notes"
+    ]
+  }
+]

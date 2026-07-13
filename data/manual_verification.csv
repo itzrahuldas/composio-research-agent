@@ -1,0 +1,28 @@
+app|category|fields_checked|first_pass_supported|final_supported|miss_or_risk_found|human_repair
+Salesforce|CRM and Sales|5|5|5|No miss; docs confirm broad APIs and OAuth flows.|Kept final row unchanged.
+Attio|CRM and Sales|5|4|5|Initial pass undercalled OAuth/public-app path and only captured API tokens.|Added OAuth2 note alongside bearer API token.
+DealCloud|CRM and Sales|5|3|4|Initial pass treated docs as self-serve; credentials are customer/tenant gated.|Changed access to customer-gated and verdict to outreach needed.
+Pylon|Support and Helpdesk|5|3|4|Initial pass overconfident on self-serve signup; product access is sales-led even though docs are public.|Changed to ready with access and medium confidence.
+Pumble|Communications and Messaging|5|2|4|Initial pass guessed a Slack-like API, but no official public API docs resolved.|Marked not buildable yet with low confidence.
+Slack|Communications and Messaging|5|5|5|No miss; OAuth, tokens and Web API docs are clear.|Kept final row unchanged.
+Google Ads|Marketing, Ads, Email and Social|5|3|5|Initial pass missed developer-token access levels and review gate.|Added review gate and developer-token blocker.
+Meta Ads|Marketing, Ads, Email and Social|5|3|5|Initial pass missed app review/business verification nuance.|Added production review and business verification blocker.
+systeme.io|Marketing, Ads, Email and Social|5|2|4|Initial pass marked unknown; search found official public API key docs and API reference.|Changed to ready with narrower surface and medium confidence.
+Shopify|Ecommerce|5|4|5|Initial pass missed official Shopify AI Toolkit/MCP docs.|Added official MCP/AI Toolkit evidence.
+Amazon Selling Partner|Ecommerce|5|3|5|Initial pass captured OAuth but missed AWS SigV4 and developer profile approval.|Added SigV4 and registration/review gate.
+fanbasis|Ecommerce|5|1|4|Initial pass could not find docs and briefly inferred an API from integrations.|Kept as no verified public API, not buildable yet.
+Ahrefs|Data, SEO and Scraping|5|4|5|Initial pass underplayed paid API subscription gating.|Changed verdict to outreach/paid needed.
+Firecrawl|Data, SEO and Scraping|5|4|5|Initial pass missed official MCP server docs.|Added MCP evidence and ready verdict.
+Waterfall.io|Data, SEO and Scraping|5|1|4|No public docs/auth found; initial pass had no reliable claim.|Marked outreach needed and low confidence.
+GitHub|Developer, Infra and Data platforms|5|5|5|No miss; REST docs and official MCP repo are clear.|Kept final row unchanged.
+Cloudflare|Developer, Infra and Data platforms|5|4|5|Initial pass missed Cloudflare managed MCP servers.|Added official MCP server evidence.
+Snowflake|Developer, Infra and Data platforms|5|4|5|Initial pass simplified auth; docs show multiple enterprise auth modes.|Added key-pair/OAuth/PAT nuance.
+Notion|Productivity and Project Management|5|5|5|No miss; auth and API docs are straightforward.|Kept final row unchanged.
+Linear|Productivity and Project Management|5|4|5|Initial pass missed official Linear MCP server.|Added MCP evidence.
+Stripe|Finance and Fintech|5|5|5|No miss; key auth and API surface are clear.|Kept final row unchanged.
+Plaid|Finance and Fintech|5|4|5|Initial pass missed production review/compliance gate.|Added sandbox vs production review distinction.
+Paygent Connect|Finance and Fintech|5|1|3|Exact public docs were not verified; NMI-like docs are not enough to assert buildability.|Kept low confidence and outreach verdict.
+NotebookLM|AI, Research and Media-native|5|2|4|Initial pass treated Gemini docs as NotebookLM API docs.|Separated adjacent Gemini API from NotebookLM no-public-API finding.
+Otter AI|AI, Research and Media-native|5|3|5|Initial pass missed official Otter MCP page and workspace webhook/admin gates.|Added MCP and admin/workspace access nuance.
+Consensus|AI, Research and Media-native|5|3|5|Initial pass only found marketing page; verification found API reference and MCP docs.|Added API reference/MCP and ready-with-plan verdict.
+Grain|AI, Research and Media-native|5|3|5|Initial pass missed Business-plan workspace API gate and OAuth/WAT distinction.|Added plan gate and token/OAuth split.

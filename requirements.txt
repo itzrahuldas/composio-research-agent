@@ -1,0 +1,2 @@
+# No third-party runtime dependencies.
+# Python 3.10+ is enough to rebuild the HTML and run evidence checks.

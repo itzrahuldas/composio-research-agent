@@ -1,0 +1,296 @@
+{
+  "checked_at": "2026-07-13",
+  "checked": 40,
+  "ok": 39,
+  "failed": [
+    {
+      "url": "https://developer.salesforce.com/docs/apis",
+      "ok": false,
+      "status": 403,
+      "final_url": "https://developer.salesforce.com/docs/apis",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "results": [
+    {
+      "url": "https://developer.salesforce.com/docs/apis",
+      "ok": false,
+      "status": 403,
+      "final_url": "https://developer.salesforce.com/docs/apis",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://help.salesforce.com/s/articleView?id=platform.remoteaccess_oauth_flows.htm&type=5",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://help.salesforce.com/s/articleView?language=en_US&id=platform.remoteaccess_oauth_flows.htm&type=5",
+      "content_type": "text/html;charset=UTF-8"
+    },
+    {
+      "url": "https://developers.hubspot.com/docs/api",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://app.hubspot.com/myaccounts?next=developerdocs&redirect=%2Fapps%2Fdeveloper-platform%2Fbuild-apps%2Fauthentication",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developers.pipedrive.com/docs/api/v1",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developers.pipedrive.com/docs/api/v1",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://pipedrive.readme.io/docs/marketplace-manager",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://pipedrive.readme.io/docs/developer-hub",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://docs.attio.com/rest-api/overview",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://docs.attio.com/rest-api/overview",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://docs.attio.com/rest-api/guides/authentication",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://docs.attio.com/rest-api/guides/authentication",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://twenty.com/developers",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://docs.twenty.com/developers/introduction",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/twentyhq/twenty",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://github.com/twentyhq/twenty",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developers.podio.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developers.podio.com/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developers.podio.com/authentication",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developers.podio.com/authentication",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://api-console.zoho.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://accounts.zoho.com/signin?servicename=AaaServer&context=&serviceurl=https%3A%2F%2Fapi-console.zoho.com%2F",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "url": "https://developer.close.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developer.close.com/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developer.close.com/topics/authentication/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developer.close.com/api/overview/api-key-authentication",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developer.copper.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developer.copper.com/",
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://developer.copper.com/introduction/authentication.html",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developer.copper.com/introduction/authentication.html",
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://api.docs.dealcloud.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://api.docs.dealcloud.com/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.dealcloud.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.intapp.com/dealcloud/?dc=1",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://developer.zendesk.com/api-reference/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developer.zendesk.com/api-reference/",
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://developer.zendesk.com/documentation/api-basics/authentication/creating-and-using-oauth-tokens-with-the-api/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developer.zendesk.com/documentation/api-basics/authentication/creating-and-using-oauth-tokens-with-the-api/",
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://developers.intercom.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developers.intercom.com/",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io/authentication/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io/authentication",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://developers.freshdesk.com/api/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developers.freshdesk.com/api/",
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://developers.freshdesk.com/api/#authentication",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developers.freshdesk.com/api/#authentication",
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://dev.frontapp.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://dev.frontapp.com/docs/welcome",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://dev.frontapp.com/reference/authentication",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://dev.frontapp.com/reference/authentication",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://docs.usepylon.com/pylon-docs/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://docs.usepylon.com/pylon-docs",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://usepylon.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.usepylon.com/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://support.liveagent.com/840770-Complete-API-reference",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://support.liveagent.com/840770-Complete-API-reference",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://support.liveagent.com/802463-REST-API",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://support.liveagent.com/802463-REST-API",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.plain.com/docs/api-reference",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.plain.com/docs/graphql/introduction",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.plain.com/docs/graphql/authentication",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.plain.com/docs/graphql/authentication",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developer.helpscout.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developer.helpscout.com/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developers.gorgias.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developers.gorgias.com/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developers.gorgias.com/reference/authentication",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developers.gorgias.com/reference/authentication",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developer.gladly.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://developer.gladly.com/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.gladly.com/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.gladly.ai/",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ]
+}
