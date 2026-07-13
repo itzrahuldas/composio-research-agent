@@ -15,6 +15,7 @@ Source repo: https://github.com/itzrahuldas/composio-research-agent
 - `src/agent.py` - actual web research agent: search/fetch/extract/critic loop with optional OpenAI and Composio hooks.
 - `data/agent_runs/sample_5.json` - real first-pass agent output for a 5-app sample.
 - `data/manual_verification.csv` - human verification sample showing first-pass misses and final repairs.
+- `data/verification_field_audit.csv` - exact field-level misses and repairs with evidence links.
 - `src/research_agent.py` - dependency-light research artifact generator and evidence URL checker.
 - `data/toolkit_queue.json` - generated Composio-style priority queue for what to build first.
 - `index.html` - generated two-minute case-study page.
@@ -71,7 +72,7 @@ The workflow is a loop:
 
 ## Verification Result
 
-Manual verification sampled 27 apps and 135 field checks.
+Manual verification sampled 27 apps and 135 field checks across all 10 categories, with at least two apps per category and extra coverage on high-risk rows.
 
 - First pass: 90/135 supported fields.
 - Final repaired pass: 126/135 supported fields.

@@ -593,7 +593,8 @@
 
     <section>
       <h2>Verification</h2>
-      <p>Manual sample: 27 apps, 135 field checks. First pass supported 90/135 fields (66.7%). After critique + repair, supported fields rose to 126/135 (93.3%). Remaining uncertainty is labeled Low/Medium instead of hidden.</p>
+      <p>Manual sample: 27 apps, 135 field checks across all 10 categories. The sample is stratified with at least two apps per category, then risk-weighted toward apps where agents hallucinate: hidden APIs, ads review, fintech compliance, MCP claims and enterprise access gates.</p>
+      <p>First pass supported 90/135 fields (66.7%). After critique + repair, supported fields rose to 126/135 (93.3%). Remaining uncertainty is labeled Low/Medium instead of hidden.</p>
       <div class="table-wrap" style="max-height: 520px;">
         <table>
           <thead>
@@ -867,6 +868,158 @@
               <td>+2</td>
               <td>Initial pass missed Business-plan workspace API gate and OAuth/WAT distinction.</td>
               <td>Added plan gate and token/OAuth split.</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+      <h3 style="margin-top:18px;">Exact Field Repairs</h3>
+      <div class="table-wrap" style="max-height: 420px;">
+        <table>
+          <thead>
+            <tr><th>App / field</th><th>First-pass issue</th><th>Final repair</th><th>Evidence</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Attio</strong><span>auth_methods</span></td>
+              <td>Only API-token auth was captured.</td>
+              <td>Added OAuth2 for public apps alongside bearer API tokens.</td>
+              <td><a href="https://docs.attio.com/rest-api/guides/authentication" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>DealCloud</strong><span>access</span></td>
+              <td>Agent treated public docs as enough for self-serve access.</td>
+              <td>Changed to customer-gated tenant credentials.</td>
+              <td><a href="https://api.docs.dealcloud.com/" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Pylon</strong><span>access</span></td>
+              <td>Agent inferred self-serve from public docs.</td>
+              <td>Changed to ready with access because workspace/API access is sales-led.</td>
+              <td><a href="https://docs.usepylon.com/pylon-docs/" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Pumble</strong><span>surface</span></td>
+              <td>Agent guessed a Slack-like API from integrations pages.</td>
+              <td>Marked no verified public REST/GraphQL API.</td>
+              <td><a href="https://pumble.com/help/" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Google Ads</strong><span>access</span></td>
+              <td>Initial pass missed developer-token access levels and review.</td>
+              <td>Added review gate and developer-token blocker.</td>
+              <td><a href="https://developers.google.com/google-ads/api/docs/access-levels" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Meta Ads</strong><span>access</span></td>
+              <td>Initial pass treated Graph API docs as self-serve production access.</td>
+              <td>Added app review and business verification blocker.</td>
+              <td><a href="https://developers.facebook.com/docs/marketing-apis" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>systeme.io</strong><span>auth_methods</span></td>
+              <td>Initial pass marked API as unknown.</td>
+              <td>Repaired with official public API key docs and API reference.</td>
+              <td><a href="https://developer.systeme.io/reference/api" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Shopify</strong><span>mcp</span></td>
+              <td>Initial pass missed Shopify&#x27;s agent/AI toolkit docs.</td>
+              <td>Added official Shopify AI Toolkit/MCP signal.</td>
+              <td><a href="https://shopify.dev/docs/apps/build/ai-toolkit" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Amazon Selling Partner</strong><span>auth_methods</span></td>
+              <td>Initial pass captured OAuth but missed AWS signing.</td>
+              <td>Added Login with Amazon OAuth2 plus AWS SigV4.</td>
+              <td><a href="https://developer-docs.amazon.com/sp-api/" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>fanbasis</strong><span>surface</span></td>
+              <td>Initial pass inferred API from product/integration pages.</td>
+              <td>Kept no verified public API docs and not buildable yet.</td>
+              <td><a href="https://www.fanbasis.com/" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Waterfall.io</strong><span>access</span></td>
+              <td>No reliable public developer docs were found.</td>
+              <td>Marked outreach needed with low confidence.</td>
+              <td><a href="https://www.waterfall.io/" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Cloudflare</strong><span>mcp</span></td>
+              <td>Initial pass missed managed MCP server docs.</td>
+              <td>Added official Cloudflare MCP servers.</td>
+              <td><a href="https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Linear</strong><span>mcp</span></td>
+              <td>Initial pass treated Linear as only GraphQL API.</td>
+              <td>Added official Linear MCP server.</td>
+              <td><a href="https://linear.app/docs/mcp" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Paygent Connect</strong><span>surface</span></td>
+              <td>Agent conflated NMI docs with Paygent Connect specifics.</td>
+              <td>Kept low confidence and outreach because exact public docs were not verified.</td>
+              <td><a href="https://docs.nmi.com/" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>NotebookLM</strong><span>verdict</span></td>
+              <td>Initial pass treated Gemini docs as NotebookLM API docs.</td>
+              <td>Separated adjacent Gemini APIs from NotebookLM no-public-API finding.</td>
+              <td><a href="https://support.google.com/notebooklm/" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Otter AI</strong><span>mcp</span></td>
+              <td>Initial pass missed official Otter MCP docs.</td>
+              <td>Added official Otter MCP server and workspace/admin access nuance.</td>
+              <td><a href="https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Consensus</strong><span>mcp</span></td>
+              <td>Initial pass found product marketing but not API/MCP docs.</td>
+              <td>Added API reference and official MCP docs.</td>
+              <td><a href="https://docs.consensus.app/docs/mcp" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            
+
+            <tr>
+              <td><strong>Grain</strong><span>access</span></td>
+              <td>Initial pass missed Business-plan workspace API gate.</td>
+              <td>Added plan gate and OAuth/workspace-access-token distinction.</td>
+              <td><a href="https://developers.grain.com/" target="_blank" rel="noopener">source</a></td>
             </tr>
             </tbody>
         </table>

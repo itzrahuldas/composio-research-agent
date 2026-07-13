@@ -1,0 +1,19 @@
+app|field|first_pass_issue|final_repair|evidence
+Attio|auth_methods|Only API-token auth was captured.|Added OAuth2 for public apps alongside bearer API tokens.|https://docs.attio.com/rest-api/guides/authentication
+DealCloud|access|Agent treated public docs as enough for self-serve access.|Changed to customer-gated tenant credentials.|https://api.docs.dealcloud.com/
+Pylon|access|Agent inferred self-serve from public docs.|Changed to ready with access because workspace/API access is sales-led.|https://docs.usepylon.com/pylon-docs/
+Pumble|surface|Agent guessed a Slack-like API from integrations pages.|Marked no verified public REST/GraphQL API.|https://pumble.com/help/
+Google Ads|access|Initial pass missed developer-token access levels and review.|Added review gate and developer-token blocker.|https://developers.google.com/google-ads/api/docs/access-levels
+Meta Ads|access|Initial pass treated Graph API docs as self-serve production access.|Added app review and business verification blocker.|https://developers.facebook.com/docs/marketing-apis
+systeme.io|auth_methods|Initial pass marked API as unknown.|Repaired with official public API key docs and API reference.|https://developer.systeme.io/reference/api
+Shopify|mcp|Initial pass missed Shopify's agent/AI toolkit docs.|Added official Shopify AI Toolkit/MCP signal.|https://shopify.dev/docs/apps/build/ai-toolkit
+Amazon Selling Partner|auth_methods|Initial pass captured OAuth but missed AWS signing.|Added Login with Amazon OAuth2 plus AWS SigV4.|https://developer-docs.amazon.com/sp-api/
+fanbasis|surface|Initial pass inferred API from product/integration pages.|Kept no verified public API docs and not buildable yet.|https://www.fanbasis.com/
+Waterfall.io|access|No reliable public developer docs were found.|Marked outreach needed with low confidence.|https://www.waterfall.io/
+Cloudflare|mcp|Initial pass missed managed MCP server docs.|Added official Cloudflare MCP servers.|https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/
+Linear|mcp|Initial pass treated Linear as only GraphQL API.|Added official Linear MCP server.|https://linear.app/docs/mcp
+Paygent Connect|surface|Agent conflated NMI docs with Paygent Connect specifics.|Kept low confidence and outreach because exact public docs were not verified.|https://docs.nmi.com/
+NotebookLM|verdict|Initial pass treated Gemini docs as NotebookLM API docs.|Separated adjacent Gemini APIs from NotebookLM no-public-API finding.|https://support.google.com/notebooklm/
+Otter AI|mcp|Initial pass missed official Otter MCP docs.|Added official Otter MCP server and workspace/admin access nuance.|https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server
+Consensus|mcp|Initial pass found product marketing but not API/MCP docs.|Added API reference and official MCP docs.|https://docs.consensus.app/docs/mcp
+Grain|access|Initial pass missed Business-plan workspace API gate.|Added plan gate and OAuth/workspace-access-token distinction.|https://developers.grain.com/

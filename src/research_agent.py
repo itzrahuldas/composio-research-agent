@@ -28,6 +28,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data" / "apps_research.csv"
 AUDIT_PATH = ROOT / "data" / "manual_verification.csv"
+FIELD_AUDIT_PATH = ROOT / "data" / "verification_field_audit.csv"
 HTML_PATH = ROOT / "index.html"
 QUEUE_PATH = ROOT / "data" / "toolkit_queue.json"
 EVIDENCE_STATUS_PATH = ROOT / "data" / "evidence_status.json"
@@ -521,11 +522,27 @@ def build_audit_rows(audit: list[dict[str, str]]) -> str:
     return "\n".join(rows)
 
 
+def build_field_audit_rows(field_audit: list[dict[str, str]]) -> str:
+    rows = []
+    for row in field_audit:
+        rows.append(
+            f"""
+            <tr>
+              <td><strong>{esc(row['app'])}</strong><span>{esc(row['field'])}</span></td>
+              <td>{esc(row['first_pass_issue'])}</td>
+              <td>{esc(row['final_repair'])}</td>
+              <td><a href="{esc(row['evidence'])}" target="_blank" rel="noopener">source</a></td>
+            </tr>
+            """
+        )
+    return "\n".join(rows)
+
+
 def pct(count: int, total: int) -> str:
     return f"{round(count / total * 100)}%"
 
 
-def build_html(apps: list[dict[str, str]], audit: list[dict[str, str]], stats: dict[str, object]) -> None:
+def build_html(apps: list[dict[str, str]], audit: list[dict[str, str]], field_audit: list[dict[str, str]], stats: dict[str, object]) -> None:
     total = int(stats["total"])
     verdict_counts: Counter[str] = stats["verdict_counts"]  # type: ignore[assignment]
     access_counts: Counter[str] = stats["access_counts"]  # type: ignore[assignment]
@@ -534,6 +551,7 @@ def build_html(apps: list[dict[str, str]], audit: list[dict[str, str]], stats: d
     p0_count = sum(1 for row in apps if priority(row) == "P0 easy win")
     gated_count = verdict_counts["Outreach needed"] + verdict_counts["No public build path"] + verdict_counts["Needs investigation"]
     ready_total = verdict_counts["Ready today"] + verdict_counts["Ready after gate"]
+    audit_categories = len({row["category"] for row in audit})
 
     html_doc = f"""<!doctype html>
 <html lang="en">
@@ -959,13 +977,23 @@ def build_html(apps: list[dict[str, str]], audit: list[dict[str, str]], stats: d
 
     <section>
       <h2>Verification</h2>
-      <p>Manual sample: {stats['audit_sample']} apps, {stats['audit_checked_total']} field checks. First pass supported {stats['audit_first_total']}/{stats['audit_checked_total']} fields ({stats['audit_first_pct']}%). After critique + repair, supported fields rose to {stats['audit_final_total']}/{stats['audit_checked_total']} ({stats['audit_final_pct']}%). Remaining uncertainty is labeled Low/Medium instead of hidden.</p>
+      <p>Manual sample: {stats['audit_sample']} apps, {stats['audit_checked_total']} field checks across all {audit_categories} categories. The sample is stratified with at least two apps per category, then risk-weighted toward apps where agents hallucinate: hidden APIs, ads review, fintech compliance, MCP claims and enterprise access gates.</p>
+      <p>First pass supported {stats['audit_first_total']}/{stats['audit_checked_total']} fields ({stats['audit_first_pct']}%). After critique + repair, supported fields rose to {stats['audit_final_total']}/{stats['audit_checked_total']} ({stats['audit_final_pct']}%). Remaining uncertainty is labeled Low/Medium instead of hidden.</p>
       <div class="table-wrap" style="max-height: 520px;">
         <table>
           <thead>
             <tr><th>Sampled app</th><th>First pass</th><th>Final</th><th>Delta</th><th>Miss or risk found</th><th>Repair</th></tr>
           </thead>
           <tbody>{build_audit_rows(audit)}</tbody>
+        </table>
+      </div>
+      <h3 style="margin-top:18px;">Exact Field Repairs</h3>
+      <div class="table-wrap" style="max-height: 420px;">
+        <table>
+          <thead>
+            <tr><th>App / field</th><th>First-pass issue</th><th>Final repair</th><th>Evidence</th></tr>
+          </thead>
+          <tbody>{build_field_audit_rows(field_audit)}</tbody>
         </table>
       </div>
     </section>
@@ -1049,6 +1077,7 @@ def main(argv: list[str] | None = None) -> int:
 
     apps = read_pipe_csv(DATA_PATH)
     audit = read_pipe_csv(AUDIT_PATH)
+    field_audit = read_pipe_csv(FIELD_AUDIT_PATH)
 
     if len(apps) != 100:
         print(f"Expected 100 apps; found {len(apps)}", file=sys.stderr)
@@ -1058,7 +1087,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.build or not args.check_links:
         write_toolkit_queue(apps)
-        build_html(apps, audit, stats)
+        build_html(apps, audit, field_audit, stats)
         print(f"Generated {HTML_PATH.relative_to(ROOT)}")
         print(f"Generated {QUEUE_PATH.relative_to(ROOT)}")
         print(
